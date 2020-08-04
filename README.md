@@ -6,9 +6,9 @@ This Hugo theme is a dead simple integration between plausible.io and gohugo.io
 
 ## Usage
 
-0 - Add this `plausible-hugo` theme component in your theme section in `config.toml` : `theme = ["theme1", ..., "plausible-hugo"]`
-1 - Add a [params.plausible] section in your `config.toml` file.
-2 - Call the partial `plausible_head.html` in your own `<head>` section : `{{ partial "plausible_head.html" . }}`
+1 - Add this `plausible-hugo` theme component in your theme section in `config.toml` : `theme = ["theme1", ..., "plausible-hugo"]`
+2 - Add a [params.plausible] section in your `config.toml` file.
+3 - Call the partial `plausible_head.html` in your own `<head>` section : `{{ partial "plausible_head.html" . }}`
 
 That's it.
 
