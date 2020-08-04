@@ -10,7 +10,7 @@ This Hugo theme is a dead simple integration between plausible.io and gohugo.io
 - Add a `[params.plausible]` section in your `config.toml` file.
 - Call the partial `plausible_head.html` in your own `<head>` section : `{{ partial "plausible_head.html" . }}`
 
-That's it.
+**That's it !** Nothing more needed.
 
 ### File `config.toml`
 
@@ -80,7 +80,7 @@ about:
 {{- end }}
 ```
 
-## plausible custom subdomain domain
+## Plausible custom subdomain domain
 
 If you use your own subdomain for plausible.io, you just have to enable the `subdomain = true` parameter.
 
