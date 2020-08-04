@@ -52,7 +52,7 @@ For example, generate your goals using `/data/about.yml` or similar frontmatter,
 
 Then you’ll get 2 goals : `telephoneMobileAbout` & `telephoneHomeAbout`
 
-#### /data/about.yml
+#### Example : `/data/about.yml`
 
 ```yml
 about:
@@ -82,7 +82,7 @@ about:
 
 ## Plausible custom subdomain
 
-If you use your own subdomain for plausible.io, you just have to enable the `subdomain = true` parameter.
+If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to enable the `subdomain = true` parameter.
 
 ## Mode server
 
