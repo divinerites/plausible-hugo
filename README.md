@@ -2,7 +2,7 @@
 
 According to their web site, *"Plausible Analytics, is a simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics"*
 
-This Hugo theme is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and gohugo.io
+This Hugo theme is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
 
 ## Usage
 
@@ -103,6 +103,7 @@ When you're in `hugo mode server`, the call to plausible.io javascript is disabl
 
 ## Credits
 
+- Hugo : [www.gohugo.io](https://www.gohugo.io)
 - Plausible : [www.plausible.io](https://www.plausible.io?ref=github-plausible-hugo)
-- Plausible documentation : [docs.plausible.io](https://docs.plausible.io?ref=github-plausible-hugo)
-- Plausible community forum : [plausible.discourse.group](https://plausible.discourse.group?ref=github-plausible-hugo)
+  - Plausible documentation : [docs.plausible.io](https://docs.plausible.io?ref=github-plausible-hugo)
+  - Plausible community forum : [plausible.discourse.group](https://plausible.discourse.group?ref=github-plausible-hugo)
