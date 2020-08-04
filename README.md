@@ -7,7 +7,7 @@ This Hugo theme is a dead simple integration between plausible.io and gohugo.io
 ## Usage
 
 - Add this `plausible-hugo` theme component in your theme section in `config.toml` : `theme = ["theme1", ..., "plausible-hugo"]`
-- Add a [params.plausible] section in your `config.toml` file.
+- Add a `[params.plausible]` section in your `config.toml` file.
 - Call the partial `plausible_head.html` in your own `<head>` section : `{{ partial "plausible_head.html" . }}`
 
 That's it.
@@ -23,9 +23,9 @@ That's it.
 
 ## Custom goals
 
-If you want to use some custom goals, for each goal, you just have to add a snipplet in a new created partial named `plausible_js.html`
+If you want to use some custom goals, for each goal, you just have to add a snipplet in a partial named `plausible_js.html` that you have to create in your site `/partials` directory
 
-Then, add a straightforward call to plausible function/goal where you want in your gohugo code.
+Then, add a straightforward call to those plausible function/goal where you need it in your gohugo code.
 
 ### Snipplet example for `plausible_js.html`
 
