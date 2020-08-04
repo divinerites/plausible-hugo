@@ -84,6 +84,19 @@ about:
 
 If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to enable the `subdomain = true` parameter.
 
+## Be carefull if you use Content-Security-Policy
+
+If you have some CSP in your headers, do not forget to allow plausible domains you use.
+
+### CSP example for `index.header`
+
+You can add those 2 domains to your existing `Content-Security-Policy`.
+
+```
+Content-Security-Policy: [... existing stuff ...] https://stats.{{ site.Params.plausible.analytics }} https://plausible.io
+```
+
+
 ## Mode server
 
 When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
