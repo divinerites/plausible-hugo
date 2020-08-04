@@ -1,0 +1,21 @@
+{{- if site.Params.plausible }}
+<!-- Active plausible on/off -->
+{{- if site.Params.plausible.enable }}
+    <!-- To avoid stats bloat when in dev/server mode -->
+    {{- if not site.IsServer -}}
+    {{- if site.Params.plausible.subdomain }}
+        <!-- Script via SUBDOMAIN custom.plausible.io -->
+        <script async defer data-domain="{{ site.Params.plausible.analytics }}" src="https://stats.{{ site.Params.plausible.analytics }}/js/index.js"></script>
+    {{- else }}
+        <!-- Script DIRECT via plausible.io -->
+        <script async defer data-domain="{{ site.Params.plausible.analytics }}" src="https://plausible.io/js/plausible.js"></script>
+    {{- end}}
+    {{- end }}
+    <!-- For custom goals/events -->
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <!-- Create a unique script for all the onclick -->
+    <script>
+        {{ partial "plausible_js.html" . | safeJS }}
+    </script>
+{{- end }}
+{{- end }}
