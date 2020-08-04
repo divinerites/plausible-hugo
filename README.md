@@ -90,6 +90,6 @@ When you're in `hugo mode server`, the call to plausible.io javascript is disabl
 
 ## Credits
 
-- Plausible : https://www.plausible.io?ref=github-plausible-hugo
-- Plausible documentation : https://docs.plausible.io?ref=github-plausible-hugo
-- Plausible community forum : https://plausible.discourse.group?ref=github-plausible-hugo
+- Plausible : [www.plausible.io](https://www.plausible.io?ref=github-plausible-hugo)
+- Plausible documentation : [docs.plausible.io](https://docs.plausible.io?ref=github-plausible-hugo)
+- Plausible community forum : [plausible.discourse.group](https://plausible.discourse.group?ref=github-plausible-hugo)
