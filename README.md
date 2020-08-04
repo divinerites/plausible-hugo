@@ -44,7 +44,43 @@ function ClickOnTelephoneNumber() {
 </a>
 ```
 
-### plausible custom subdomain domain
+### Using variables for your Goal names
+
+For more flexibility, do not forget that you can use any `{{ $variable }}` or `{{ .variable }}` for your Goal name.
+
+For example, generate your goals using `/data/about.yml` or similar frontmatter, you get the idea.
+
+Then you’ll get 2 goals : `telephoneMobileAbout` & `telephoneHomeAbout`
+
+#### /data/about.yml
+
+```yml
+about:
+  enable : true
+  title : My title
+  about_item :
+  - title : An other item title
+    plausible : Mobile
+    content : lorem ipsum is better than nothing.
+  - title : An other item title 2
+    plausible : Home
+    content : lorem ipsum is better than nothing 2
+```
+
+#### sniplet for `plausible_js.html`
+
+```js
+{{- $data := index .Site.Data .Site.Language.Lang }}
+{{- if $data.about.about.enable }}
+   {{- range $data.about.about.about_item }}
+      function telephone{{ .plausible | safeJS }}About() {
+          plausible('telephone{{ .plausible | safeJS }}About');
+      }
+  {{- end }}
+{{- end }}
+```
+
+## plausible custom subdomain domain
 
 If you use your own subdomain for plausible.io, you just have to enable the `subdomain = true` parameter.
 
