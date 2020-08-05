@@ -18,6 +18,7 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 [params.plausible]
    enable      = true  # Whether to enable plausible tracking
    domain   = "example.com"  # This is the plausible "domain" name/id in your dashboard
+   # optional variables
    custom_js_domain   = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain (Optional. "plausible.io" is used if unset)
 ```
@@ -83,7 +84,7 @@ about:
 
 ## Plausible custom subdomain
 
-If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to enable the `subdomain = true` parameter.
+If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
 
 ## Be carefull if you use Content-Security-Policy
 
@@ -94,9 +95,8 @@ If you have some CSP in your headers, do not forget to allow plausible domains y
 You can add those 2 domains to your existing `Content-Security-Policy`.
 
 ```
-Content-Security-Policy: [... existing stuff ...] https://stats.{{ site.Params.plausible.analytics }} https://plausible.io
+Content-Security-Policy: [... existing stuff ...] {{ site.Params.plausible.custom_js_domain }} https://plausible.io
 ```
-
 
 ## Mode server
 
