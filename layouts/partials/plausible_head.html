@@ -8,7 +8,7 @@
                 <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ site.Params.plausible.custom_domain }}/js/index.js"></script>
             {{- else }}
                 <!-- Script direct -->
-                <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://plausible.io/js/plausible.js"></script>
+                <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ default "plausible.io" site.Params.plausible.plausible_domain }}/js/plausible.js"></script>
             {{- end }}
         {{- end }}
 
