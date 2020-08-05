@@ -3,12 +3,12 @@
     {{- if site.Params.plausible.enable }}
         <!-- To avoid stats bloat when in dev/server mode -->
         {{- if not site.IsServer -}}
-            {{- if site.Params.plausible.custom_domain }}
+            {{- if site.Params.plausible.custom_js_domain }}
                 <!-- Script via custom domain -->
-                <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ site.Params.plausible.custom_domain }}/js/index.js"></script>
+                <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ site.Params.plausible.custom_js_domain }}/js/index.js"></script>
             {{- else }}
                 <!-- Script direct -->
-                <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ default "plausible.io" site.Params.plausible.plausible_domain }}/js/plausible.js"></script>
+                <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ default "plausible.io" site.Params.plausible.selfhosted_domain }}/js/plausible.js"></script>
             {{- end }}
         {{- end }}
 

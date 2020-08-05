@@ -1,4 +1,4 @@
 [params.plausible]
    enable = true
-   custom_domain = "stats.example.com"
-   domain = "example.com"
+   custom_js_domain = "stats.example.com"
+   selfhosted_domain = "example.com"
