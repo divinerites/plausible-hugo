@@ -16,9 +16,9 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 
 ```toml
 [params.plausible]
-   enable      = true
-   subdomain   = false
-   analytics   = "put-here-your-plausible-analytics-code"
+   enable      = true  # Whether to enable plausible tracking
+   custom_domain   = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain)
+   domain   = "example.com"
 ```
 
 ## Custom goals
