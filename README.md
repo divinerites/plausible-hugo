@@ -17,8 +17,8 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 ```toml
 [params.plausible]
    enable      = true  # Whether to enable plausible tracking
-   custom_domain   = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain)
    domain   = "example.com"
+   custom_domain   = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
    plausible_domain = "myplausible.example.com"  # Self-hosted plausible domain (Optional. "plausible.io" is used if unset)
 ```
 
