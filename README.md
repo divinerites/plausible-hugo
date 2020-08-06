@@ -162,7 +162,7 @@ This is optional, and `plausible.io` is used if this parameter is unset.
 
 If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
 
-Just add `public_dashboard = true` in your `config.toml` plausible section. By default this option is set to `false`, so nothing is written by default.
+Just add `public_dashboard = true` in your `config.toml` plausible section. **By default this option is set to `false`, so nothing is written by default**.
 
 ```toml
 [params.plausible]
