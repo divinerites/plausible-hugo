@@ -85,7 +85,7 @@ about:
 
 If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
 
-## Be carefull if you use Content-Security-Policy
+## Be careful if you use Content-Security-Policy
 
 If you have some CSP in your headers, do not forget to allow plausible domains you use.
 
