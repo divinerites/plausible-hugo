@@ -1,6 +1,6 @@
 {{- if site.Params.plausible }}
-    <!-- Active plausible on/off -->
-    {{- if site.Params.plausible.enable }}
+    <!-- Active plausible on/off + Front Matter option for each page -->
+    {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
         <!-- To avoid stats bloat when in dev/server mode -->
         {{- if not site.IsServer -}}
             {{- if site.Params.plausible.custom_js_domain }}

@@ -22,6 +22,16 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain (Optional. "plausible.io" is used if unset)
 ```
 
+### Do not track certain pages
+
+You can prevent certain pages from being tracked by adding `plausible_do_not_track: true` in this page Front Matter
+
+```yaml
+---
+plausible_do_not_track: true
+---
+```
+
 ## Custom goals
 
 If you want to use some custom goals, for each goal, you just have to add a snipplet in a partial named `plausible_js.html` that you have to create in your site `/partials` directory
