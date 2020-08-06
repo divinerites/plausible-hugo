@@ -158,6 +158,23 @@ This is optional, and `plausible.io` is used if this parameter is unset.
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
 
+## 8 - Write public dashboard information in Web page source
+
+If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
+
+Just add `public_dashboard = true` in your `config.toml` plausible section. By default this option is set to `false`, so nothing is written by default.
+
+```toml
+[params.plausible]
+   public_dashboard = true
+```
+
+And this will be written in your HTML source code. It also works for self hosting.
+
+```html
+<!-- Plausible Analytics public dashboard URL : https://plausible.io/example.com -->
+```
+
 ## Credits
 
 - Hugo : [www.gohugo.io](https://www.gohugo.io)

@@ -15,9 +15,16 @@
         <!-- For custom goals/events -->
         <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
+        <!-- Eventually write public URL information in Web page source -->
+        {{- if site.Params.plausible.public_dashboard }}
+            {{- $dashboard_url := default "plausible.io" site.Params.plausible.selfhosted_domain }}
+            {{- $dashboard_url = printf "%s/%s" $dashboard_url site.Params.plausible.domain }}
+            {{- printf "<!-- Plausible Analytics public dashboard URL : https://%s -->" $dashboard_url | safeHTML }}
+        {{- end }}
+
         <!-- Create a unique script for all the onclick -->
         <script>
-            {{ partial "plausible_js.html" . | safeJS }}
+            {{- partial "plausible_js.html" . | safeJS }}
         </script>
     {{- end }}
 {{- end }}

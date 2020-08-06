@@ -1,5 +1,6 @@
 [params.plausible]
    enable = true
-   domain = ""
+   domain = "my-plausible-domain-id-dashboard"
    custom_js_domain = ""
    selfhosted_domain = ""
+   public_dashboard = false
