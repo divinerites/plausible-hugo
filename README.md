@@ -12,14 +12,12 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 
 **That's it !** Nothing more needed.
 
-### File `config.toml`
+### Mininum `config.toml` file
 
 ```toml
 [params.plausible]
    enable = true  # Whether to enable plausible tracking
-   domain = "example.com"  # This is the plausible "domain" name/id in your dashboard
-   custom_js_domain = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
-   selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain (Optional. "plausible.io" is used if unset)
+   domain = "example.com"  # Plausible "domain" name/id in your dashboard
 ```
 
 ### Do not track certain pages
@@ -95,6 +93,11 @@ about:
 
 If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
 
+```toml
+[params.plausible]
+   custom_js_domain = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
+```
+
 ## 4 - Plausible and Content-Security-Policy
 
 Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
@@ -115,10 +118,13 @@ When you're in `hugo mode server`, the call to plausible.io javascript is disabl
 
 You can define your self hosted domain address in `config.toml`.
 
+This is optional, and `plausible.io` is used if this parameter is unset.
+
 ```toml
 [params.plausible]
-   selfhosted_domain = "myplausible.example.com"
+   selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
+
 
 ## Credits
 
