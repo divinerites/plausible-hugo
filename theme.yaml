@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.org/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.3.1
+version: 1.3.2
 tags:
   - component
   - plausible.io
