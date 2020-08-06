@@ -8,7 +8,7 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 
 ## 1 - Usage
 
-- Add this `plausible-hugo` theme component in your theme section in `config.toml` : `theme = ["theme1", ..., "plausible-hugo"]`
+- Add this `plausible-hugo` theme component in your theme section in `config.toml`.
 - Add a `[params.plausible]` section in your `config.toml` file.
 - Call the partial `plausible_head.html` in your own `<head>` section : `{{ partial "plausible_head.html" . }}`
 
@@ -17,9 +17,10 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 ### Mininum `config.toml` file
 
 ```toml
+theme = ["existing-theme", ..., "plausible-hugo"]
 [params.plausible]
-   enable = true  # Whether to enable plausible tracking
-   domain = "example.com"  # Plausible "domain" name/id in your dashboard
+enable = true  # Whether to enable plausible tracking
+domain = "example.com"  # Plausible "domain" name/id in your dashboard
 ```
 
 ### Do not track certain pages
