@@ -17,7 +17,7 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 ### Mininum `config.toml` file
 
 ```toml
-theme = ["existing-theme", ..., "plausible-hugo"]
+theme = ["plausible-hugo"]  # Add this theme to your already existing other themes
 [params.plausible]
 enable = true  # Whether to enable plausible tracking
 domain = "example.com"  # Plausible "domain" name/id in your dashboard
