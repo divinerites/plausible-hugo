@@ -2,6 +2,8 @@
 
 According to their web site, *"Plausible Analytics, is a simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics"*
 
+And Hugo is *The world’s fastest framework for building websites*.
+
 This Hugo theme is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
 
 ## 1 - Usage
@@ -124,7 +126,6 @@ This is optional, and `plausible.io` is used if this parameter is unset.
 [params.plausible]
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
-
 
 ## Credits
 
