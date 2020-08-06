@@ -4,7 +4,7 @@ According to their web site, *"Plausible Analytics, is a simple, open-source, li
 
 This Hugo theme is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
 
-## Usage
+## 1 - Usage
 
 - Add this `plausible-hugo` theme component in your theme section in `config.toml` : `theme = ["theme1", ..., "plausible-hugo"]`
 - Add a `[params.plausible]` section in your `config.toml` file.
@@ -32,7 +32,7 @@ plausible_do_not_track: true
 ---
 ```
 
-## Custom goals
+## 2 - Custom goals
 
 If you want to use some custom goals, for each goal, you just have to add a snipplet in a partial named `plausible_js.html` that you have to create in your site `/partials` directory
 
@@ -91,13 +91,13 @@ about:
 {{- end }}
 ```
 
-## Plausible custom subdomain
+## 3 - Plausible custom subdomain
 
 If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
 
-## Be careful if you use Content-Security-Policy
+## 4 - Plausible and Content-Security-Policy
 
-If you have some CSP in your headers, do not forget to allow plausible domains you use.
+Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
 
 ### CSP example for `index.header`
 
@@ -107,11 +107,11 @@ You can add those 2 domains to your existing `Content-Security-Policy`.
 Content-Security-Policy: [... existing stuff ...] {{ site.Params.plausible.custom_js_domain }} https://plausible.io
 ```
 
-## Mode server
+## 5 - Mode server
 
 When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
 
-## Self Hosting
+## 6 - Self Hosting
 
 You can define your self hosted domain address in `config.toml`.
 
