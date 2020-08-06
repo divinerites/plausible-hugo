@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.org/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.3.O
+version: 1.3.1
 tags:
   - component
   - plausible.io
@@ -17,7 +17,6 @@ features:
   - add front-matter option whether the current page should be tracked (v1.2.0)
   - Add option for writing public plausible dashboard URL in comments (v1.3.0)
 min_version: 0.50.0
-
 author:
   name: "Didier Divinerites"
   name: "& contributors"
