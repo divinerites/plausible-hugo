@@ -10,7 +10,7 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 
 - Add this `plausible-hugo` theme component in your theme section in `config.toml`.
 - Add a `[params.plausible]` section in your `config.toml` file.
-- Call the partial `plausible_head.html` in your own `<head>` section : `{{ partial "plausible_head.html" . }}`
+- Call the partial `plausible_head.html` in your own `<head>` section.
 
 **That's it !** Nothing more needed.
 
@@ -21,6 +21,16 @@ theme = ["plausible-hugo"]  # Add this theme to your already existing other them
 [params.plausible]
 enable = true  # Whether to enable plausible tracking
 domain = "example.com"  # Plausible "domain" name/id in your dashboard
+```
+
+### Example `<head>` html section
+
+```go-html-template
+<head>
+   ...
+   {{ partial "plausible_head.html" . }}
+   ...
+</head>
 ```
 
 ### Do not track certain pages
