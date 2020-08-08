@@ -8,7 +8,7 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 
 ## 1 - Usage
 
-1. Add this `plausible-hugo` theme component in your theme section in `config.toml`.
+1. Add this `plausible-hugo` component as a theme in your theme section in `config.toml`. *You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer and know how to do it*.
 1. Add a `[params.plausible]` section in your `config.toml` file.
 1. Call the partial `plausible_head.html` in your own `<head>` section.
 
