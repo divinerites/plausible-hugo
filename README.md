@@ -133,30 +133,7 @@ If you [use your own subdomain](https://docs.plausible.io/custom-domain) for pla
    custom_js_domain = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
 ```
 
-## 6 - Plausible and Content-Security-Policy
-
-Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
-
-### CSP example for `index.header`
-
-You can add those 2 domains to your existing `Content-Security-Policy`.
-
-```headers
-Content-Security-Policy: [... existing stuff ...] {{ site.Params.plausible.custom_js_domain }} https://plausible.io
-```
-
-## 7 - Self Hosting
-
-You can define your self hosted domain address in `config.toml`.
-
-This is optional, and `plausible.io` is used if this parameter is unset.
-
-```toml
-[params.plausible]
-   selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
-```
-
-## 8 - Write public dashboard information in Web page source
+## 6 - Write public dashboard information in Web page source
 
 If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
 
@@ -171,6 +148,29 @@ And this will be written in your HTML source code. It also works for self hostin
 
 ```html
 <!-- Plausible Analytics public dashboard URL : https://plausible.io/example.com -->
+```
+
+## 7 - Self Hosting
+
+You can define your self hosted domain address in `config.toml`.
+
+This is optional, and `plausible.io` is used if this parameter is unset.
+
+```toml
+[params.plausible]
+   selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
+```
+
+## 8 - Plausible and Content-Security-Policy
+
+Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
+
+### CSP example for `index.header`
+
+You can add those 2 domains to your existing `Content-Security-Policy`.
+
+```headers
+Content-Security-Policy: [... existing stuff ...] {{ site.Params.plausible.custom_js_domain }} https://plausible.io
 ```
 
 ## 9 - Mode server
