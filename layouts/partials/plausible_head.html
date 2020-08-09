@@ -12,6 +12,16 @@
             {{- end }}
         {{- end }}
 
+        <!-- Put in the code some Warning for CSP -->
+        {{- $v_csp := "" }}
+        {{- if site.Params.plausible.custom_js_domain }}
+            {{- $v_csp = site.Params.plausible.custom_js_domain }}
+        {{- else }}
+            {{- $v_csp = default "plausible.io" site.Params.plausible.selfhosted_domain }}
+        {{- end }}
+        {{- printf " <!-- If you are using Content-Security-Policy, do not forget to add this domain to your CSP : https://%s  -->" $v_csp | safeHTML }}
+
+
         <!-- For custom goals/events -->
         <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 

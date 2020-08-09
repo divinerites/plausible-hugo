@@ -165,13 +165,17 @@ This is optional, and `plausible.io` is used if this parameter is unset.
 
 Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
 
-### CSP example for `index.header`
+### CSP example for `/layouts/index.headers`
 
-You can add those 2 domains to your existing `Content-Security-Policy`.
+You can add directly the requested domain(s) to your existing `Content-Security-Policy`.
+
+Or use this snipplet in your `/layouts/index.headers`to generate for you the correct `_headers`, used by Netlify:
 
 ```headers
-Content-Security-Policy: [... existing stuff ...] {{ site.Params.plausible.custom_js_domain }} https://plausible.io
+Content-Security-Policy: [... existing stuff ...] {{ if site.Params.plausible.custom_js_domain }}https://{{ site.Params.plausible.custom_js_domain }}{{- else }}https://{{ default "plausible.io" site.Params.plausible.selfhosted_domain }}{{- end }}
 ```
+
+In any case, in the HTML source code you'll find a comment with the correct domain to add to your CSP.
 
 ## 9 - Mode server
 
