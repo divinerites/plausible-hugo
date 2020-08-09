@@ -49,6 +49,8 @@ If you want to use some custom goals, for each goal, you just have to add a snip
 
 Then, add a straightforward call to those plausible function/goal where you need it in your gohugo code.
 
+This is an example, if you want a plausible custom goal named `ClickOnTelephoneNumber`.
+
 ### Snipplet example for `plausible_js.html`
 
 ```js
