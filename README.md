@@ -33,9 +33,9 @@ domain = "example.com"  # Plausible "domain" name/id in your dashboard
 </head>
 ```
 
-### Do not track certain pages
+## 2 - Do not track certain pages
 
-You can prevent certain pages from being tracked by adding `plausible_do_not_track: true` in this page Front Matter
+You can prevent certain pages from being tracked by adding `plausible_do_not_track: true` in the page Front Matter
 
 ```yaml
 ---
@@ -43,7 +43,7 @@ plausible_do_not_track: true
 ---
 ```
 
-## 2 - Simple custom goals
+## 3 - Simple custom goals
 
 If you want to use some custom goals, for each goal, you just have to add a snipplet in a partial named `plausible_js.html` that you have to create in your site `/partials` directory
 
@@ -66,7 +66,7 @@ function ClickOnTelephoneNumber() {
 </a>
 ```
 
-## 3 - Variable custom goals
+## 4 - Variable custom goals
 
 ### Using variables for your Goal names
 
@@ -122,7 +122,7 @@ about:
 {{- end }}
 ```
 
-## 4 - Plausible custom subdomain
+## 5 - Plausible custom subdomain
 
 If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
 
@@ -131,7 +131,7 @@ If you [use your own subdomain](https://docs.plausible.io/custom-domain) for pla
    custom_js_domain = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
 ```
 
-## 5 - Plausible and Content-Security-Policy
+## 6 - Plausible and Content-Security-Policy
 
 Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
 
@@ -143,11 +143,11 @@ You can add those 2 domains to your existing `Content-Security-Policy`.
 Content-Security-Policy: [... existing stuff ...] {{ site.Params.plausible.custom_js_domain }} https://plausible.io
 ```
 
-## 6 - Mode server
+## 7 - Mode server
 
 When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
 
-## 7 - Self Hosting
+## 8 - Self Hosting
 
 You can define your self hosted domain address in `config.toml`.
 
@@ -158,7 +158,7 @@ This is optional, and `plausible.io` is used if this parameter is unset.
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
 
-## 8 - Write public dashboard information in Web page source
+## 9 - Write public dashboard information in Web page source
 
 If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
 
