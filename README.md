@@ -145,11 +145,7 @@ You can add those 2 domains to your existing `Content-Security-Policy`.
 Content-Security-Policy: [... existing stuff ...] {{ site.Params.plausible.custom_js_domain }} https://plausible.io
 ```
 
-## 7 - Mode server
-
-When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
-
-## 8 - Self Hosting
+## 7 - Self Hosting
 
 You can define your self hosted domain address in `config.toml`.
 
@@ -160,7 +156,7 @@ This is optional, and `plausible.io` is used if this parameter is unset.
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
 
-## 9 - Write public dashboard information in Web page source
+## 8 - Write public dashboard information in Web page source
 
 If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
 
@@ -176,6 +172,10 @@ And this will be written in your HTML source code. It also works for self hostin
 ```html
 <!-- Plausible Analytics public dashboard URL : https://plausible.io/example.com -->
 ```
+
+## 9 - Mode server
+
+When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
 
 ## Credits
 
