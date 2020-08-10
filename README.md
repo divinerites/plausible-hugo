@@ -167,12 +167,12 @@ Be careful if you have some CSP in your headers, do not forget to **allow plausi
 
 You can add directly the requested domain(s) to your existing `Content-Security-Policy`.
 
-Or use this snipplet in your `/layouts/index.headers`to generate for you the correct `_headers`, used by Netlify:
+Or use this `plausible_csp.html` partial in your `/layouts/index.headers`to generate for you the correct `_headers`, used by Netlify:
 
 ### CSP example for `/layouts/index.headers`
 
 ```headers
-Content-Security-Policy: [... existing stuff ...] {{ if site.Params.plausible.custom_js_domain }}https://{{ site.Params.plausible.custom_js_domain }}{{- else }}https://{{ default "plausible.io" site.Params.plausible.selfhosted_domain }}{{- end }}
+Content-Security-Policy: [... existing stuff ...] {{ partial "plausible_csp.html" . }}
 ```
 
 In any case, in the HTML source code, you'll find a comment with the correct domain to add to your CSP.
