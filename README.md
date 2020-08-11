@@ -1,10 +1,10 @@
-# plausible-hugo theme & module
+# plausible-hugo theme component & module
 
 According to their web site, *"Plausible Analytics, is a simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics"*
 
 And Hugo is *The world’s fastest framework for building websites*.
 
-This Hugo theme is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
+This Hugo theme component & module is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
 
 ## 1 - Usage is simple as 1-2-3
 
@@ -21,8 +21,8 @@ This Hugo theme is a dead simple integration between [plausible.io](https://www.
 ```toml
 theme = ["plausible-hugo"]  # Add this theme to your already existing other themes
 [params.plausible]
-enable = true  # Whether to enable plausible tracking
-domain = "example.com"  # Plausible "domain" name/id in your dashboard
+  enable = true  # Whether to enable plausible tracking
+  domain = "example.com"  # Plausible "domain" name/id in your dashboard
 ```
 
 ### Example `<head>` html section
