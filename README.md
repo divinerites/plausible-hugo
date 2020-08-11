@@ -1,4 +1,4 @@
-# plausible-hugo theme component & module
+# plausible-hugo : A theme component & Hugo module
 
 According to their web site, *"Plausible Analytics, is a simple, open-source, lightweight (< 1 KB) and privacy-friendly web analytics alternative to Google Analytics"*
 
