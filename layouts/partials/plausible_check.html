@@ -1,0 +1,10 @@
+<!-- Version v1.0.0 relics -->
+{{- if isset .Site.Params.plausible "analytics" }}
+   {{- $_text := "Upgrade your config.toml; You have trace of v1.0.0 in [params.plausible.analytics] : %s" }}
+   {{- errorf $_text site.Params.plausible.analytics }}
+{{- end }}
+<!-- Version > v1.1.0 check -->
+{{- if not (isset .Site.Params.plausible "domain") }}
+   {{- $_text := "Upgrade your config.toml; You need [params.plausible.domain] : %s" }}
+   {{- errorf $_text "your-plausible-domain-id" }}
+{{- end }}

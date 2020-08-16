@@ -1,3 +1,6 @@
+<!-- Check for config.toml in sync with the used variable in this version -->
+{{- partial "plausible_check.html" . }}
+
 {{- if site.Params.plausible }}
     <!-- Active plausible on/off + Front Matter option for each page -->
     {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}

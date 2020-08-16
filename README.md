@@ -183,6 +183,14 @@ In any case, in the HTML source code, you'll find a comment with the correct dom
 
 When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
 
+## 10 - Check variables & module versions
+
+We perform an automatic check for the right ory mandatvariables fitting the right version.
+
+If we found a problem, we abort your build with a clear message.
+
+So it helps you updating your `config.toml` in case we introduced some breaking changes in variables names between versions (it is rare, but it happened already).
+
 ## Credits
 
 - Hugo : [www.gohugo.io](https://www.gohugo.io)
