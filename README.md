@@ -126,7 +126,21 @@ about:
 {{- end }}
 ```
 
-## 5 - Plausible custom subdomain
+## 5 -  Custom goals when entering a page
+
+You can have a use case where you want a custom goal setup when you enter a certain page. So you can have more granularity than the classic "page goals".
+
+Just add a front matter parameter `plausible_custom_goal` in this page.
+
+Each time you enter the page, your custom goal is reached.
+
+```yaml
+---
+plausible_custom_goal : "MySpecialCustomGoal"
+---
+```
+
+## 6 - Plausible custom subdomain
 
 If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
 
@@ -135,7 +149,7 @@ If you [use your own subdomain](https://docs.plausible.io/custom-domain) for pla
    custom_js_domain = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
 ```
 
-## 6 - Write public dashboard information in Web page source
+## 7 - Write public dashboard information in Web page source
 
 If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
 
@@ -152,7 +166,7 @@ And this will be written in your HTML source code. It also works for self hostin
 <!-- Plausible Analytics public dashboard URL : https://plausible.io/example.com -->
 ```
 
-## 7 - Self Hosting
+## 8 - Self Hosting
 
 You can define your self hosted domain address in `config.toml`.
 
@@ -163,7 +177,7 @@ This is optional, and `plausible.io` is used if this parameter is unset.
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
 
-## 8 - Plausible and Content-Security-Policy
+## 9 - Plausible and Content-Security-Policy
 
 Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
 
@@ -179,11 +193,23 @@ Content-Security-Policy: [... existing stuff ...] {{ partial "plausible_csp.html
 
 In any case, in the HTML source code, you'll find a comment with the correct domain to add to your CSP.
 
-## 9 - Mode server
+## 10 - Mode server
 
 When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
 
-## 10 - Check variables & module versions
+## 11 - Debug mode
+
+When in mode server you could really need to test your code in real situation.
+
+In this case, just add `debug = true` in your `[params.plausible]`.
+The call to plausible.io javascript will be enable, so you can have everything working like in production.
+
+```toml
+[params.plausible]
+   debug = true  # debug mode
+```
+
+## 12 - Check variables & module versions
 
 We perform an automatic check if the right mandatory variables are fitting the right version.
 

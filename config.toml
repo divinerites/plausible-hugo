@@ -4,3 +4,4 @@
    custom_js_domain = ""
    selfhosted_domain = ""
    public_dashboard = false
+   debug = false  # debug mode

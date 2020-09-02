@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.org/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.5.0
+version: 1.6.0
 tags:
   - component
   - plausible.io
@@ -19,6 +19,8 @@ features:
   - Add warning for adding domain to CSP in HTML comments (v1.4.0)
   - Improve _headers domains with a partial (v1.4.1)
   - Check variables & module versions (v1.5.0)
+  - Add front matter parameter `plausible_custom_goal` for custom goals (v1.6.0)
+  - Add debug option while in server mode (v1.6.0).
 min_version: 0.50.0
 author:
   name: "Didier Divinerites"
