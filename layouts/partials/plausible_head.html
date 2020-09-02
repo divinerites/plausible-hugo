@@ -39,5 +39,14 @@
         <script>
             {{- partial "plausible_js.html" . | safeJS }}
         </script>
+
+        <!-- Manage custom goals by entering a page
+             if parameter "plausible_custom_goal" is set -->
+        {{- with .Params.plausible_custom_goal }}
+            <script>
+                plausible('{{ . | safeJS }}');
+            </script>
+        {{- end }}
+
     {{- end }}
 {{- end }}
