@@ -49,6 +49,7 @@
         {{- with .Params.plausible_custom_goal }}
             <script>
                 plausible('{{ . | safeJS }}');
+                // plausible('Debug');
             </script>
         {{- end }}
 
