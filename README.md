@@ -6,7 +6,7 @@ And Hugo is *The world’s fastest framework for building websites*.
 
 This Hugo theme component & module is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
 
-## 1 - Usage is simple as 1-2-3
+## Usage is simple as 1-2-3
 
 1. Add this `plausible-hugo` component as a theme in your theme section in `config.toml`.
 1. Add a `[params.plausible]` section in your `config.toml` file.
@@ -35,19 +35,9 @@ theme = ["plausible-hugo"]  # Add this theme to your already existing other them
 </head>
 ```
 
-# Extended options 
+# Using Plausible goals  
 
-## 2 - Do not track certain pages
-
-You can prevent certain pages from being tracked by adding `plausible_do_not_track: true` in the page Front Matter
-
-```yaml
----
-plausible_do_not_track: true
----
-```
-
-## 3 - Simple custom goals
+## 1 - Simple custom goals
 
 If you want to use some custom goals, for each goal, you just have to add a snipplet in a partial named `plausible_js.html` that you have to create in your site `/partials` directory
 
@@ -72,7 +62,21 @@ function ClickOnTelephoneNumber() {
 </a>
 ```
 
-## 4 - Variable custom goals
+## 2 -  Custom goals when entering a page
+
+You can have a use case where you want a custom goal setup when you enter a certain page. So you can have more granularity than the classic "page goals".
+
+Just add a front matter parameter `plausible_custom_goal` in this page.
+
+Each time you enter the page, your custom goal is reached.
+
+```yaml
+---
+plausible_custom_goal : "MySpecialCustomGoal"
+---
+```
+
+## 3 - Variable custom goals
 
 ### Using variables for your Goal names
 
@@ -128,21 +132,19 @@ about:
 {{- end }}
 ```
 
-## 5 -  Custom goals when entering a page
+# Other options 
 
-You can have a use case where you want a custom goal setup when you enter a certain page. So you can have more granularity than the classic "page goals".
+## 1 - Do not track certain pages
 
-Just add a front matter parameter `plausible_custom_goal` in this page.
-
-Each time you enter the page, your custom goal is reached.
+You can prevent certain pages from being tracked by adding `plausible_do_not_track: true` in the page Front Matter
 
 ```yaml
 ---
-plausible_custom_goal : "MySpecialCustomGoal"
+plausible_do_not_track: true
 ---
 ```
 
-## 6 - Plausible custom subdomain
+## 2 - Plausible custom subdomain
 
 If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
 
@@ -151,7 +153,7 @@ If you [use your own subdomain](https://docs.plausible.io/custom-domain) for pla
    custom_js_domain = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
 ```
 
-## 7 - Write public dashboard information in Web page source
+## 3 - Write public dashboard information in Web page source
 
 If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
 
@@ -168,7 +170,7 @@ And this will be written in your HTML source code. It also works for self hostin
 <!-- Plausible Analytics public dashboard URL : https://plausible.io/example.com -->
 ```
 
-## 8 - Self Hosting
+## 4 - Self Hosting
 
 You can define your self hosted domain address in `config.toml`.
 
@@ -179,7 +181,7 @@ This is optional, and `plausible.io` is used if this parameter is unset.
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
 
-## 9 - Plausible and Content-Security-Policy
+## 5 - Plausible and Content-Security-Policy
 
 Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
 
@@ -195,11 +197,13 @@ Content-Security-Policy: [... existing stuff ...] {{ partial "plausible_csp.html
 
 In any case, in the HTML source code, you'll find a comment with the correct domain to add to your CSP.
 
-## 10 - Mode server
+# Developping locally with plausible-hugo
+
+## 1 - Mode server
 
 When you're in `hugo mode server`, the call to plausible.io javascript is disable, so you can dev without bloating your statistics.
 
-## 11 - Debug mode
+## 2 - Debug mode
 
 When in mode server you could really need to test your code in real situation.
 
@@ -211,7 +215,9 @@ The call to plausible.io javascript will be enable, so you can have everything w
    debug = true  # debug mode
 ```
 
-## 12 - Check variables & module versions
+# Updating plausible-hugo
+
+## 1 - Check variables & module versions
 
 We perform an automatic check if the right mandatory variables are fitting the right version.
 
