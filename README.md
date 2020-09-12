@@ -35,7 +35,7 @@ theme = ["plausible-hugo"]  # Add this theme to your already existing other them
 </head>
 ```
 
-# Using Plausible goals  
+# Using Plausible goals
 
 ## 1 - Simple custom goals
 
@@ -132,7 +132,7 @@ about:
 {{- end }}
 ```
 
-# Other options 
+# Other options
 
 ## 1 - Do not track certain pages
 
@@ -215,7 +215,7 @@ The call to plausible.io javascript will be enable, so you can have everything w
    debug = true  # debug mode
 ```
 
-# Updating plausible-hugo
+# plausible-hugo versions
 
 ## 1 - Check variables & module versions
 
@@ -225,7 +225,7 @@ If we found a problem, we abort your build with a clear message.
 
 So it helps you updating your `config.toml` in case we introduced some breaking changes in variables names between versions. *It is rare, but it happened already*.
 
-## Credits
+## 2 - Credits
 
 - Hugo : [www.gohugo.io](https://www.gohugo.io)
 - Plausible : [www.plausible.io](https://www.plausible.io?ref=github-plausible-hugo)
