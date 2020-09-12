@@ -35,6 +35,8 @@ theme = ["plausible-hugo"]  # Add this theme to your already existing other them
 </head>
 ```
 
+# Extended options 
+
 ## 2 - Do not track certain pages
 
 You can prevent certain pages from being tracked by adding `plausible_do_not_track: true` in the page Front Matter
