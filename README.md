@@ -12,7 +12,7 @@ This Hugo theme component & module is a dead simple integration between [plausib
 1. Add a `[params.plausible]` section in your `config.toml` file.
 1. Call the partial `plausible_head.html` in your own `<head>` section.
 
-**That's it !** It works. Nothing more is needed.
+> ### ***That's it ! It works***. Nothing more is needed.
 
 *You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer and know how to do it*.
 
