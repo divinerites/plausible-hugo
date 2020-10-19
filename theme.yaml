@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.org/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.6.0
+version: 1.6.1
 tags:
   - component
   - plausible.io
@@ -21,6 +21,7 @@ features:
   - Check variables & module versions (v1.5.0)
   - Add front matter parameter plausible_custom_goal for specific page’s + specific custom goals (v1.6.0)
   - Add debug option while in server mode (v1.6.0).
+  - Bump version (module problems) (v1.6.1)
 min_version: 0.50.0
 author:
   name: "Didier Divinerites"
