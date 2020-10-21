@@ -34,14 +34,12 @@
         {{ .Scratch.Set "nonce" $nonce }}
         <!-- script nonce="{{ $nonce }}" -->
         <script>
-            // Create a unique script for all the onclick
-            {{- partial "plausible_js.html" . | safeJS }}
-
-            // Manage custom goals by entering a page
-            //  if parameter "plausible_custom_goal" is set
+            /* Create a unique script for all the onclick */
+            {{ partial "plausible_js.html" . | safeJS }}
+            /* Manage custom goals by entering a page */
+            /* if parameter "plausible_custom_goal" is set */
             {{- with .Params.plausible_custom_goal }}
                 plausible('{{ . | safeJS }}');
-                // plausible('Debug');
             {{- end }}
         </script>
 
