@@ -7,4 +7,4 @@
 {{- else -}}
    {{- $domain = default "plausible.io" site.Params.plausible.selfhosted_domain -}}
 {{- end -}}
-{{- printf "'nonce-%s' 'nonce-%s' https://%s" $nonce_base $nonce $domain | safeHTML -}}
+{{- printf "'unsafe-inline' 'nonce-%s' 'nonce-%s' https://%s" $nonce_base $nonce $domain | safeHTML -}}
