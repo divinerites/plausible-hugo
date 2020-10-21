@@ -25,7 +25,9 @@
 
         <!-- plausible.io section -->
         {{ "<!-- Specific script for plausible.io -->" | safeHTML }}
-        {{- $nonce := "r@nd0m"}}
+        {{- $seed := now.Format "2006-01-02 15:04" }}
+        {{- $nonce := delimit (shuffle (split (md5 $seed) "" )) "" }}
+        {{ .Scratch.Set "nonce" $nonce }}
         <script nonce="{{ $nonce }}">
             // Create a unique script for all the onclick
             {{- partial "plausible_js.html" . | safeJS }}

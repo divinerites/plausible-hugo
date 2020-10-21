@@ -1,5 +1,5 @@
 <!-- script-src security for plausible.io script domain -->
-{{- $nonce := "r@nd0m" -}}
+{{- $nonce := (.Scratch.Get "nonce") }}
 {{- $domain := "" -}}
 {{- if site.Params.plausible.custom_js_domain -}}
    {{- $domain = site.Params.plausible.custom_js_domain -}}
