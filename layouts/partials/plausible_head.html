@@ -21,7 +21,10 @@
         {{- end }}
 
         <!-- For custom goals/events -->
-        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+        {{- $seed := now.Format "2006-01-02" }}
+        {{- $nonce_base := delimit (shuffle (split (md5 $seed) "" )) "" }}
+        {{ .Scratch.Set "nonce_base" $nonce_base }}
+        <script nonce="{{ $nonce_base }}">window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 
         <!-- plausible.io section -->
         {{ "<!-- Specific script for plausible.io -->" | safeHTML }}
