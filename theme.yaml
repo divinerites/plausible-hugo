@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.org/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.7.0
+version: 1.7.2
 tags:
   - component
   - plausible.io
@@ -23,6 +23,7 @@ features:
   - Add debug option while in server mode (v1.6.0).
   - Bump version (module problems) (v1.6.1)
   - Upgrade script-src CSP reporting because of inline script (v1.7.0)
+  - Revert to unsafe-inline (v1.7.2)
 min_version: 0.50.0
 author:
   name: "Didier Divinerites"
