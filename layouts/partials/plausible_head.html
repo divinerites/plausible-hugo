@@ -2,6 +2,7 @@
 {{- partial "plausible_check.html" . }}
 
 {{- if site.Params.plausible }}
+    {{ "<!-- plausible.io section -->" | safeHTML }}
     <!-- Active plausible on/off + Front Matter option for each page -->
     {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
         <!-- To avoid stats bloat when in dev/server & not debug mode  -->
@@ -19,6 +20,24 @@
             {{- end }}
         {{- end }}
 
+        <!-- For custom goals/events -->
+        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+
+        <!-- plausible.io section -->
+        {{ "<!-- Specific script for plausible.io -->" | safeHTML }}
+        {{- $nonce := "r@nd0m"}}
+        <script nonce="{{ $nonce }}">
+            // Create a unique script for all the onclick
+            {{- partial "plausible_js.html" . | safeJS }}
+
+            // Manage custom goals by entering a page
+            //  if parameter "plausible_custom_goal" is set
+            {{- with .Params.plausible_custom_goal }}
+                plausible('{{ . | safeJS }}');
+                // plausible('Debug');
+            {{- end }}
+        </script>
+
         <!-- Put in the code some Warning for CSP -->
         {{- $v_csp := "" }}
         {{- if site.Params.plausible.custom_js_domain }}
@@ -26,11 +45,11 @@
         {{- else }}
             {{- $v_csp = default "plausible.io" site.Params.plausible.selfhosted_domain }}
         {{- end }}
-        {{- printf " <!-- If you are using Content-Security-Policy, do not forget to add this domain to your CSP : https://%s  -->" $v_csp | safeHTML }}
-
-
-        <!-- For custom goals/events -->
-        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+        {{- printf "<!-- If you are using Content-Security-Policy, do not forget to add this code to your CSP : " | safeHTML }}
+        {{ printf "  script-src "  | safeHTML }}{{- partial "plausible_csp.html" . }}
+        {{ printf "  connect-src " | safeHTML }}{{- partial "plausible_csp.html" . }}
+        {{ printf "  or just add the partial 'plausible.csp.html' to those 2 csp directive in your 'index.headers' file" | safeHTML }}
+        {{ printf "-->" | safeHTML }}
 
         <!-- Eventually write public URL information in Web page source -->
         {{- if site.Params.plausible.public_dashboard }}
@@ -39,19 +58,6 @@
             {{- printf "<!-- Plausible Analytics public dashboard URL : https://%s -->" $dashboard_url | safeHTML }}
         {{- end }}
 
-        <!-- Create a unique script for all the onclick -->
-        <script>
-            {{- partial "plausible_js.html" . | safeJS }}
-        </script>
-
-        <!-- Manage custom goals by entering a page
-             if parameter "plausible_custom_goal" is set -->
-        {{- with .Params.plausible_custom_goal }}
-            <script>
-                plausible('{{ . | safeJS }}');
-                // plausible('Debug');
-            </script>
-        {{- end }}
-
     {{- end }}
+    {{ "<!-- End of plausible.io section -->" | safeHTML }}
 {{- end }}
