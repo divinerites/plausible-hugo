@@ -12,7 +12,7 @@ This Hugo theme component & module is a dead simple integration between [plausib
 1. Add a `[params.plausible]` section in your `config.toml` file.
 1. Call the partial `plausible_head.html` in your own `<head>` section.
 
-> ### ***That's it ! It works***. Nothing more is needed.
+> ### ***That's it ! It works***. Nothing more is needed
 
 *You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer and know how to do it*.
 
@@ -132,6 +132,16 @@ about:
 {{- end }}
 ```
 
+## 4 - Outbound Link custom goal
+
+If you want to use the [Outbound Link](https://docs.plausible.io/outbound-link-click-tracking/) custom goal,
+just add the parameter `outbound_link` to your `params.plausible` section.
+
+```toml
+[params.plausible]
+  outbound_link = true
+```
+
 # Other options
 
 ## 1 - Do not track certain pages
@@ -146,11 +156,11 @@ plausible_do_not_track: true
 
 ## 2 - Plausible custom subdomain
 
-If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter.
+If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter. This is optional.
 
 ```toml
 [params.plausible]
-   custom_js_domain = "stats.example.com"  # Whether to serve the script from a custom domain (https://docs.plausible.io/custom-domain) (Optional)
+   custom_js_domain = "stats.example.com"
 ```
 
 ## 3 - Write public dashboard information in Web page source
