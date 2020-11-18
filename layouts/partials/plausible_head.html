@@ -3,6 +3,16 @@
 
 {{- if site.Params.plausible }}
 {{ "<!-- plausible.io section -->" | safeHTML }}
+
+    {{- if (site.Params.plausible.enable) }}
+{{- "<!-- Preconnect to required origins -->" | safeHTML }}
+        {{- if site.Params.plausible.custom_js_domain }}
+<link rel="preconnect" href="https://{{ site.Params.plausible.custom_js_domain }}">
+        {{- else }}
+<link rel="preconnect" href='https://{{ default "plausible.io" site.Params.plausible.selfhosted_domain }}'>
+        {{- end }}
+    {{- end }}
+
     <!-- Script name classic / Outbound Link -->
     {{- $scriptname           := "plausible" }}
     {{- $scriptname_custom    := "index" }}
