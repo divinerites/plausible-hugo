@@ -184,7 +184,7 @@ You also can add 2 parameter if you want, but this is optional  :
 
 - the theme you want (`light` / `dark` / `system`). Default is `light`.
 - the custom background color.
-   - Tip : You can set the background color as `transparent`.
+  - Tip : You can set the background color as `transparent`.
 
 ```toml
 [params.plausible]
@@ -193,7 +193,6 @@ You also can add 2 parameter if you want, but this is optional  :
 ```
 
 Then just add this partial where you want your embeded Plausible dashboard.
-
 
 ```html
    ...
