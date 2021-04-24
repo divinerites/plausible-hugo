@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.org/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.8.1
+version: 1.9.0
 tags:
   - component
   - plausible.io
@@ -26,6 +26,7 @@ features:
   - Revert to unsafe-inline (v1.7.6)
   - Add option for Outbound Links custom goal (v1.8.0)
   - Add Preconnect to required origins (v1.8.1)
+  - Add embeded Plausible dashboard in your Hugo site (v1.9.0)
 min_version: 0.50.0
 author:
   name: "Didier Divinerites"
