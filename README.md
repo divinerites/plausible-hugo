@@ -163,7 +163,45 @@ If you [use your own subdomain](https://docs.plausible.io/custom-domain) for pla
    custom_js_domain = "stats.example.com"
 ```
 
-## 3 - Write public dashboard information in Web page source
+## 3 - Embed your Plausible.io dashboard in your Hugo site
+
+You can embed your Plausible stats dashboard into on your hugo website using an iFrame. This is useful in case you want to showcase your stats.
+
+First :
+
+- you need to generate a [**shared link** in your own Plausible dashboard](https://plausible.io/docs/embed-dashboard).
+- Do not give a theme or background color. You can do this with Hugo params.
+- For example it will generate `https://plausible.io/share/yourdomain?auth=AZE1234RTYUOP67`.
+
+Then, just put this value in a `.plausible.dash_link` parameter.
+
+```toml
+[params.plausible]
+  dash_link = "https://plausible.io/share/yourdomain?auth=AZE1234RTYUOP67"
+```
+
+You also can add 2 parameter if you want, but this is optional  :
+
+- the theme you want (`light` / `dark` / `system`). Default is `light`.
+- the custom background color.
+   - Tip : You can set the background color as `transparent`.
+
+```toml
+[params.plausible]
+  dash_theme = "dark"
+  dash_bgcolor = "#880011"
+```
+
+Then just add this partial where you want your embeded Plausible dashboard.
+
+
+```html
+   ...
+   {{ partial "plausible_dashboard.html" .}}
+   ...
+```
+
+## 4 - Write public dashboard information in Web page source
 
 If you made your [dashboard public](https://docs.plausible.io/visibility), *you may want* to write this url in your web page source, so people can find it more easily.
 
@@ -180,7 +218,7 @@ And this will be written in your HTML source code. It also works for self hostin
 <!-- Plausible Analytics public dashboard URL : https://plausible.io/example.com -->
 ```
 
-## 4 - Self Hosting
+## 5 - Self Hosting
 
 You can define your self hosted domain address in `config.toml`.
 
@@ -191,7 +229,7 @@ This is optional, and `plausible.io` is used if this parameter is unset.
    selfhosted_domain = "myplausible.example.com"  # Self-hosted plausible domain
 ```
 
-## 5 - Plausible and Content-Security-Policy
+## 6 - Plausible and Content-Security-Policy
 
 Be careful if you have some CSP in your headers, do not forget to **allow plausible domains** you use.
 

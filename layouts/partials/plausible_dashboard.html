@@ -1,0 +1,30 @@
+<!-- MANDATORY : You need to generate a shared link in your dashboard -->
+<!-- Test if .plausible.dash_link exist.if not => Stop and Error -->
+{{- if not (isset .Site.Params.plausible "dash_link") }}
+   {{- $_text := "Upgrade your config.toml; You need [params.plausible.dash_link] = %s" }}
+   {{- errorf $_text "your-public-dashboard-link" }}
+{{- end }}
+
+<!-- Prepare variables -->
+{{- $dash_link    := site.Params.plausible.dash_link }}
+{{- $dash_theme   := site.Params.plausible.dash_theme | default "light"}}
+<!-- Manage eventually the backgrounf color -->
+{{- $dash_bgcolor := "" }}
+{{- with site.Params.plausible.dash_bgcolor }}
+   {{- $color_OK := . | replaceRE "#" "%23" }}
+   {{- $dash_bgcolor = printf "&background=%s" $color_OK }}
+{{- end }}
+<!-- The source for embeded dashboard -->
+{{- $dash_source := printf "%s&embed=true&theme=%s%s" $dash_link $dash_theme $dash_bgcolor }}
+<!-- The iframe for the embeded dshboard -->
+<iframe
+   plausible-embed src="{{ $dash_source }}"
+   scrolling="no"
+   frameborder="0"
+   loading="lazy"
+   style="width: 1px; min-width: 100%; height: 1600px;">
+</iframe>
+<div style="font-size: 14px; padding-bottom: 14px;">
+   Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a>
+</div>
+<script async src="https://plausible.io/js/embed.host.js"></script>

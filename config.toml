@@ -6,3 +6,7 @@
    public_dashboard = false
    outbound_link = false
    debug = false  # debug mode
+   # For embeded dashboard
+   dash_link = "https://plausible.io/share/yourdomain?auth=AZE1234RTYUOP67"
+   dash_theme = ""
+   dash_bgcolor = ""
