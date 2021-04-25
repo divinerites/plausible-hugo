@@ -8,3 +8,6 @@
    {{- $_text := "Upgrade your config.toml; You need [params.plausible.domain] : %s" }}
    {{- errorf $_text "your-plausible-domain-id" }}
 {{- end }}
+<!-- Write information about the plugin -->
+{{- $_text := "<!-- Thanks for using github/divinerites/plausible-hugo v%s. Please, consider leaving a star on Github if you like it. -->" }}
+{{- printf $_text site.Params.plausible_version.id | safeHTML }}

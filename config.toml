@@ -7,6 +7,9 @@
    outbound_link = false
    debug = false  # debug mode
    # For embeded dashboard
+   dash_disable = false
    dash_link = "https://plausible.io/share/yourdomain?auth=AZE1234RTYUOP67"
    dash_theme = ""
    dash_bgcolor = ""
+[params.plausible_version]
+   id = "1.9.1"
