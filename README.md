@@ -290,4 +290,3 @@ So it helps you updating your `config.toml` in case we introduced some breaking 
 - Hugo : [www.gohugo.io](https://www.gohugo.io)
 - Plausible : [www.plausible.io](https://www.plausible.io?ref=github-plausible-hugo)
   - Plausible documentation : [docs.plausible.io](https://docs.plausible.io?ref=github-plausible-hugo)
-  - Plausible community forum : [plausible.discourse.group](https://plausible.discourse.group?ref=github-plausible-hugo)
