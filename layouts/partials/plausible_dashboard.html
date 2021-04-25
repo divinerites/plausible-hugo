@@ -5,6 +5,8 @@
    {{- errorf $_text "your-public-dashboard-link" }}
 {{- end }}
 
+{{- if not site.Params.plausible.dash_disable }}
+
 <!-- Prepare variables -->
 {{- $dash_link    := site.Params.plausible.dash_link }}
 {{- $dash_theme   := site.Params.plausible.dash_theme | default "light"}}
@@ -28,3 +30,5 @@
    Stats powered by <a target="_blank" style="color: #4F46E5; text-decoration: underline;" href="https://plausible.io">Plausible Analytics</a>
 </div>
 <script async src="https://plausible.io/js/embed.host.js"></script>
+
+{{- end }}
