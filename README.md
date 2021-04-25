@@ -206,7 +206,7 @@ This embed dashboard feature **do not rely on `.plausible.enable`** variable.
 
 So it will be shown if you simply add the `plausible_dashboard.html` template. Whatever is `plausible.enable`
 
-In this case, for manually disabling the dashboard you can set `dash_disable` variable to `false`.
+In this case, for manually disabling the dashboard you can set `dash_disable` variable to `true`.
 
 ```toml
 [params.plausible]
