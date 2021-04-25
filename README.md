@@ -16,6 +16,8 @@ This Hugo theme component & module is a dead simple integration between [plausib
 
 *You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer and know how to do it*.
 
+Please, consider **leaving a star on Github if you like it**.
+
 ### Mininum `config.toml` file
 
 ```toml
