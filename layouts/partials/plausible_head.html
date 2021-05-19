@@ -10,8 +10,6 @@
 {{- $pio_domain := "plausible.io"}}
 {{- if site.Params.plausible.selfhosted_domain }}
     {{- $pio_domain = site.Params.plausible.selfhosted_domain }}
-{{- else if site.Params.plausible.proxy_netlify }}
-
 {{- else if site.Params.plausible.custom_js_domain }}
     {{- $pio_domain = site.Params.plausible.custom_js_domain }}
 {{- end }}
@@ -19,8 +17,6 @@
 {{- $pio_script := "plausible"}}
 {{- if site.Params.plausible.selfhosted_domain }}
     {{- $pio_script = "plausible"}}
-{{- else if site.Params.plausible.proxy_netlify }}
-
 {{- else if site.Params.plausible.custom_js_domain }}
     {{- $pio_script = "index"}}
 {{- end }}
