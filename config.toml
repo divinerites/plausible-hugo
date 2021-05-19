@@ -17,4 +17,4 @@
    # debug mode
    debug = true
 [params.plausible_version]
-   id = "2.0.0"
+   id = "1.10.0"
