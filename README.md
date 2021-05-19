@@ -180,7 +180,7 @@ If you are hosting on Netlify, we have done the [main setup](https://plausible.i
 # Netlify redirects from aliases
 {{ range $p := site.Pages -}}
 {{ range .Aliases }}
-{{  . | printf "%-35s" }}	{{ $p.RelPermalink }} 301!
+{{  . | printf "%-35s" }} {{ $p.RelPermalink }} 301!
 {{ end -}}
 {{- end -}}
 
