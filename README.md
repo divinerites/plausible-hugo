@@ -159,14 +159,54 @@ plausible_do_not_track: true
 ---
 ```
 
-## 2 - Plausible custom subdomain
+## 2 - Proxy for analytics and manage Adblockers
 
-If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter. This is optional.
+Some adblockers/browsers block every tracking script, even privacy-first analytics like plausible.io
+
+You can deal with this by [proxying the script](https://plausible.io/docs/proxy/introduction).
+
+If you are hosting on Netlify, we have done the [main setup](https://plausible.io/docs/proxy/guides/netlify) for you.
+
+1 - Set `proxy_netlify` on your `config.toml`.
+
+```toml
+[params.plausible]
+   proxy_netlify = true
+```
+
+2 - Add the partial `plausible_redirects_netlify.html` in your `index.redir` file. So your final generated `_redirects` will take care of this proxying.
+
+```html
+# Netlify redirects from aliases
+{{ range $p := site.Pages -}}
+{{ range .Aliases }}
+{{  . | printf "%-35s" }}	{{ $p.RelPermalink }} 301!
+{{ end -}}
+{{- end -}}
+
+{{ partial "plausible_redirects_netlify.html" . }}
+
+```
+
+3 - If you do not already use the `index.redir` system, you just can create a `_redirects` file in your `/static` folder and add those 2 lines below in this file.
+
+```txt
+/js/script.js https://plausible.io/js/plausible.js 200
+/api/event https://plausible.io/api/event 200
+```
+
+## 2b - [DEPRECATED] Plausible custom subdomain
+
+Using CNAME custom domains are now in legacy mode. **Please use the proxy method instead**.
+
+*If you [use your own subdomain](https://docs.plausible.io/custom-domain) for plausible.io, you just have to give the url in `custom_js_domain` parameter. This is optional.*
 
 ```toml
 [params.plausible]
    custom_js_domain = "stats.example.com"
 ```
+
+Nota : Since v1.10.0 you will receive a console warning when running hugo if you have this parameter.
 
 ## 3 - Embed your Plausible.io dashboard in your Hugo site
 
@@ -287,6 +327,8 @@ The call to plausible.io javascript will be enable, so you can have everything w
 We perform an automatic check if the right mandatory variables are fitting the right version.
 
 If we found a problem, we abort your build with a clear message.
+
+You will also receive warning message if you are using deprecated features.
 
 So it helps you updating your `config.toml` in case we introduced some breaking changes in variables names between versions. *It is rare, but it happened already*.
 

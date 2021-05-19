@@ -27,7 +27,7 @@
 {{- if site.Params.plausible.proxy_netlify }}
     {{- $pio_http = "" }}
     {{- $pio_domain = "" }}
-    {{- $pio_script = "pio_script"}}
+    {{- $pio_script = "script"}}
 {{- end }}
 <!-- Active plausible : if option is "on" and for allowed pages -->
 {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
