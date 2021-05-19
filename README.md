@@ -195,6 +195,12 @@ If you are hosting on Netlify, we have done the [main setup](https://plausible.i
 /misc/api/event https://plausible.io/api/event 200
 ```
 
+If you want outbound-links, use this line instead:
+
+```txt
+/misc/js/script.js https://plausible.io/js/plausible.outbound-links.js 200
+```
+
 ## 2b - [DEPRECATED] Plausible custom subdomain
 
 Using CNAME custom domains are now in legacy mode. **Please use the proxy method instead**.

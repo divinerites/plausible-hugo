@@ -1,11 +1,6 @@
 <!-- Check for config.toml in sync with the used variable in this version -->
 {{- partial "plausible_check.html" . }}
 
-<!-- manage OUTBOUND LINKS if set -->
-{{- $outbound := "" }}
-{{- if site.Params.plausible.outbound_link }}
-    {{- $outbound = ".outbound-links" }}
-{{- end }}
 <!-- Compute the DOMAIN name -->
 {{- $pio_http       := "https://" }}
 {{- $pio_js         := "/js/"}}
@@ -24,15 +19,23 @@
 {{- else if site.Params.plausible.custom_js_domain }}
     {{- $pio_script = "index"}}
 {{- end }}
-{{- $pio_script = printf "%s%s" $pio_script $outbound }}
+<!-- manage OUTBOUND LINKS if set -->
+{{- $outbound := "" }}
+{{- if site.Params.plausible.outbound_link }}
+    {{- $outbound = ".outbound-links" }}
+{{- end }}
 <!-- Manage proxing for Netlify -->
 {{- if site.Params.plausible.proxy_netlify }}
     {{- $pio_http = "" }}
     {{- $pio_domain = "" }}
     {{- $pio_script = "script"}}
+    <!-- outboundlink are managed on the redirect. Not here. -->
+    {{- $outbound = "" }}
     {{- $pio_js = "/misc/js/"}}
     {{- $pio_data_api = "/misc/api/event"}}
 {{- end }}
+{{- $pio_script = printf "%s%s" $pio_script $outbound }}
+
 <!-- Active plausible : if option is "on" and for allowed pages -->
 {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
 
