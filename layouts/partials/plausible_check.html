@@ -1,13 +1,19 @@
 <!-- Version v1.0.0 relics -->
 {{- if isset .Site.Params.plausible "analytics" }}
-   {{- $_text := "Upgrade your config.toml; You have trace of v1.0.0 in [params.plausible.analytics] : %s" }}
+   {{- $_text := "plausible-hugo module : Upgrade your config.toml; You have trace of v1.0.0 in [params.plausible.analytics] : %s" }}
    {{- errorf $_text site.Params.plausible.analytics }}
 {{- end }}
 <!-- Version > v1.1.0 check -->
 {{- if not (isset .Site.Params.plausible "domain") }}
-   {{- $_text := "Upgrade your config.toml; You need [params.plausible.domain] : %s" }}
+   {{- $_text := "plausible-hugo module : Upgrade your config.toml; You need [params.plausible.domain] : %s" }}
    {{- errorf $_text "your-plausible-domain-id" }}
 {{- end }}
+<!-- Check deprecated custom_js_domain > v2.0.0 -->
+{{- if isset .Site.Params.plausible "custom_js_domain" }}
+   {{- $_text := "plausible-hugo module : `custom_js_domain` %s is now deprecated. Use `proxy_netlify` instead and follow instruction for easy setup." }}
+   {{- warnf $_text site.Params.plausible.custom_js_domain }}
+{{- end }}
+
 <!-- Write information about the plugin -->
 {{- $_text := "<!-- Thanks for using github/divinerites/plausible-hugo v%s. Please, consider leaving a star on Github if you like it. -->" }}
 {{- printf $_text site.Params.plausible_version.id | safeHTML }}

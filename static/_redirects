@@ -1,0 +1,3 @@
+# Redirects for plausible.io & github.com/divinerites/plausible-hugo
+/js/pio_script.js https://plausible.io/js/plausible.js 200
+/api/event https://plausible.io/api/event 200

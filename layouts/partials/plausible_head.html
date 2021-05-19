@@ -7,12 +7,14 @@
     {{- $outbound = ".outbound-links" }}
 {{- end }}
 <!-- Compute the DOMAIN name -->
+{{- $pio_http := "https://" }}
 {{- $pio_domain := "plausible.io"}}
 {{- if site.Params.plausible.selfhosted_domain }}
     {{- $pio_domain = site.Params.plausible.selfhosted_domain }}
 {{- else if site.Params.plausible.custom_js_domain }}
     {{- $pio_domain = site.Params.plausible.custom_js_domain }}
 {{- end }}
+{{- $pio_domain_real := $pio_domain }}
 <!-- Compute the SCRIPT name -->
 {{- $pio_script := "plausible"}}
 {{- if site.Params.plausible.selfhosted_domain }}
@@ -21,23 +23,30 @@
     {{- $pio_script = "index"}}
 {{- end }}
 {{- $pio_script = printf "%s%s" $pio_script $outbound }}
-
+<!-- Manage proxing for Netlify -->
+{{- if site.Params.plausible.proxy_netlify }}
+    {{- $pio_http = "" }}
+    {{- $pio_domain = "" }}
+    {{- $pio_script = "pio_script"}}
+{{- end }}
 <!-- Active plausible : if option is "on" and for allowed pages -->
 {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
 
     <!-- Preconnect to required origins -->
-    <link rel="preconnect" href="https://{{ $pio_domain }}">
+    {{- if $pio_domain }}
+        <link rel="preconnect" href="https://{{ $pio_domain }}">
+    {{- end }}
     <!-- Add SCRIPT DIRECTIVES -->
     {{- if and (site.IsServer) (not site.Params.plausible.debug) -}}
         <!-- To avoid stats bloat when in dev/server & not debug mode -->
         {{- printf "<!-- Dev mode : We do not load plausible script to avoid bloating your stats -->" | safeHTML }}
     {{- else }}
         <!-- In production or in debug mode, we need plausible to fully operate -->
-        <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ $pio_domain }}/js/{{ $pio_script }}.js"></script>
+        <script async defer data-domain="{{ site.Params.plausible.domain }}" src="{{ $pio_http }}{{ $pio_domain }}/js/{{ $pio_script }}.js"></script>
     {{- end }}
 
     {{- partialCached "plausible_head_csp.html" (dict "context" . "domain" $pio_domain "script" $pio_script ) }}
-    {{- partialCached "plausible_head_public_url.html" (dict "context" . "domain" $pio_domain "script" $pio_script ) }}
+    {{- partialCached "plausible_head_public_url.html" (dict "context" . "domain" $pio_domain_real "script" $pio_script ) }}
 
     <!-- For custom goals/events -->
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
