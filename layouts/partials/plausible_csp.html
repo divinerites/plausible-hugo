@@ -1,6 +1,4 @@
-<!-- script-src security for plausible.io script domain / Workaround 'unsafe-inline' : ["'nonce-%s' 'nonce-%s'" $nonce_base $nonce] does not work -->
-{{- $nonce := (.Scratch.Get "nonce") }}
-{{- $nonce_base := (.Scratch.Get "nonce_base") }}
+<!-- script-src security for plausible.io script domain -->
 {{- $domain := "" -}}
 {{- if site.Params.plausible.custom_js_domain -}}
    {{- $domain = site.Params.plausible.custom_js_domain -}}

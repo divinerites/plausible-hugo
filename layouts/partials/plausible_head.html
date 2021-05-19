@@ -1,85 +1,58 @@
 <!-- Check for config.toml in sync with the used variable in this version -->
 {{- partial "plausible_check.html" . }}
 
-{{- if site.Params.plausible }}
-{{ "<!-- plausible.io section -->" | safeHTML }}
+<!-- manage OUTBOUND LINKS if set -->
+{{- $outbound := "" }}
+{{- if site.Params.plausible.outbound_link }}
+    {{- $outbound = ".outbound-links" }}
+{{- end }}
+<!-- Compute the DOMAIN name -->
+{{- $pio_domain := "plausible.io"}}
+{{- if site.Params.plausible.selfhosted_domain }}
+    {{- $pio_domain = site.Params.plausible.selfhosted_domain }}
+{{- else if site.Params.plausible.proxy_netlify }}
 
-    {{- if (site.Params.plausible.enable) }}
-{{- "<!-- Preconnect to required origins -->" | safeHTML }}
-        {{- if site.Params.plausible.custom_js_domain }}
-<link rel="preconnect" href="https://{{ site.Params.plausible.custom_js_domain }}">
-        {{- else }}
-<link rel="preconnect" href='https://{{ default "plausible.io" site.Params.plausible.selfhosted_domain }}'>
-        {{- end }}
+{{- else if site.Params.plausible.custom_js_domain }}
+    {{- $pio_domain = site.Params.plausible.custom_js_domain }}
+{{- end }}
+<!-- Compute the SCRIPT name -->
+{{- $pio_script := "plausible"}}
+{{- if site.Params.plausible.selfhosted_domain }}
+    {{- $pio_script = "plausible"}}
+{{- else if site.Params.plausible.proxy_netlify }}
+
+{{- else if site.Params.plausible.custom_js_domain }}
+    {{- $pio_script = "index"}}
+{{- end }}
+{{- $pio_script = printf "%s%s" $pio_script $outbound }}
+
+<!-- Active plausible : if option is "on" and for allowed pages -->
+{{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
+
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://{{ $pio_domain }}">
+    <!-- Add SCRIPT DIRECTIVES -->
+    {{- if and (site.IsServer) (not site.Params.plausible.debug) -}}
+        <!-- To avoid stats bloat when in dev/server & not debug mode -->
+        {{- printf "<!-- Dev mode : We do not load plausible script to avoid bloating your stats -->" | safeHTML }}
+    {{- else }}
+        <!-- In production or in debug mode, we need plausible to fully operate -->
+        <script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ $pio_domain }}/js/{{ $pio_script }}.js"></script>
     {{- end }}
 
-    <!-- Script name classic / Outbound Link -->
-    {{- $scriptname           := "plausible" }}
-    {{- $scriptname_custom    := "index" }}
-    {{- if site.Params.plausible.outbound_link }}
-        {{- $scriptname        = "plausible.outbound-links" }}
-        {{- $scriptname_custom = "index.outbound-links" }}
-    {{- end }}
-    <!-- Active plausible on/off + Front Matter option for each page -->
-    {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
-        <!-- To avoid stats bloat when in dev/server & not debug mode  -->
-        {{- if and (site.IsServer) (not site.Params.plausible.debug) -}}
-            <!-- Do not bloat your stats while developping -->
-{{- printf "<!-- Dev mode : We do not load plausible.io script to avoid bloating your stats -->" | safeHTML }}
-        {{- else }}
-            <!-- In production or in debug mode, we need plausible to fully operate -->
-            {{- if site.Params.plausible.custom_js_domain }}
-                <!-- Script via custom domain -->
-<script async defer data-domain="{{ site.Params.plausible.domain }}" src="https://{{ site.Params.plausible.custom_js_domain }}/js/{{ $scriptname_custom }}.js"></script>
-            {{- else }}
-                <!-- Script direct -->
-<script async defer data-domain="{{ site.Params.plausible.domain }}" src='https://{{ default "plausible.io" site.Params.plausible.selfhosted_domain }}/js/{{ $scriptname }}.js'></script>
-            {{- end }}
+    {{- partialCached "plausible_head_csp.html" (dict "context" . "domain" $pio_domain "script" $pio_script ) }}
+    {{- partialCached "plausible_head_public_url.html" (dict "context" . "domain" $pio_domain "script" $pio_script ) }}
+
+    <!-- For custom goals/events -->
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+    <script>
+        /* Create a unique script for all the onclick */
+        {{- partial "plausible_js.html" . | safeJS }}
+        /* Manage custom goals by entering a page */
+        /* if parameter "plausible_custom_goal" is set */
+        {{- with .Params.plausible_custom_goal }}
+            plausible('{{ . | safeJS }}');
         {{- end }}
+    </script>
 
-        <!-- For custom goals/events -->
-        {{- $seed := now.Format "2006-01-02" }}
-        {{- $nonce_base := delimit (shuffle (split (md5 $seed) "" )) "" }}
-        {{ .Scratch.Set "nonce_base" $nonce_base }}
-        <!-- script nonce="{{ $nonce_base }}" -->
-<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-
-        <!-- plausible.io section -->
-{{ "<!-- Specific script for plausible.io -->" | safeHTML }}
-        {{- $seed := now.Format "2006-01-02 15:04" }}
-        {{- $nonce := delimit (shuffle (split (md5 $seed) "" )) "" }}
-        {{ .Scratch.Set "nonce" $nonce }}
-        <!-- script nonce="{{ $nonce }}" -->
-<script>
-    /* Create a unique script for all the onclick */
-    {{ partial "plausible_js.html" . | safeJS }}
-    /* Manage custom goals by entering a page */
-    /* if parameter "plausible_custom_goal" is set */
-    {{- with .Params.plausible_custom_goal }}
-        plausible('{{ . | safeJS }}');
-    {{- end }}
-</script>
-
-        <!-- Put in the code some Warning for CSP -->
-        {{- $v_csp := "" }}
-        {{- if site.Params.plausible.custom_js_domain }}
-            {{- $v_csp = site.Params.plausible.custom_js_domain }}
-        {{- else }}
-            {{- $v_csp = default "plausible.io" site.Params.plausible.selfhosted_domain }}
-        {{- end }}
-{{ printf "<!-- If you are using Content-Security-Policy, do not forget to add this code to your CSP : " | safeHTML }}
-{{ printf "  script-src "  | safeHTML }}{{- partial "plausible_csp.html" . }}
-{{ printf "  connect-src " | safeHTML }}{{- partial "plausible_csp.html" . }}
-{{ printf "  or just add the partial 'plausible.csp.html' to those 2 csp directive in your 'index.headers' file" | safeHTML }}
-{{ printf "-->" | safeHTML }}
-
-        <!-- Eventually write public URL information in Web page source -->
-        {{- if site.Params.plausible.public_dashboard }}
-            {{- $dashboard_url := default "plausible.io" site.Params.plausible.selfhosted_domain }}
-            {{- $dashboard_url = printf "%s/%s" $dashboard_url site.Params.plausible.domain }}
-{{- printf "<!-- Plausible Analytics public dashboard URL : https://%s -->" $dashboard_url | safeHTML }}
-        {{- end }}
-
-    {{- end }}
-{{ "<!-- End of plausible.io section -->" | safeHTML }}
 {{- end }}

@@ -1,0 +1,6 @@
+<!-- Write some Warning for CSP -->
+{{ printf "<!-- If you are using Content-Security-Policy, do not forget to add this code to your CSP : " | safeHTML }}
+{{ printf "  script-src "  | safeHTML }}{{- partial "plausible_csp.html" . }}
+{{ printf "  connect-src " | safeHTML }}{{- partial "plausible_csp.html" . }}
+{{ printf "  or just add the partial 'plausible_csp.html' to those 2 csp directives in your 'index.headers' file" | safeHTML }}
+{{ printf "-->" | safeHTML }}

@@ -1,0 +1,6 @@
+<!-- Eventually write public URL information in Web page source -->
+{{- if site.Params.plausible.public_dashboard }}
+{{- $dashboard_url := .domain }}
+{{- $dashboard_url = printf "%s/%s" $dashboard_url site.Params.plausible.domain }}
+{{- printf "<!-- Plausible Analytics public dashboard URL : https://%s -->" $dashboard_url | safeHTML }}
+{{- end }}
