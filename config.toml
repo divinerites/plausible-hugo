@@ -1,15 +1,20 @@
 [params.plausible]
    enable = true
    domain = "my-plausible-domain-id-dashboard"
-   custom_js_domain = ""
-   selfhosted_domain = ""
-   public_dashboard = false
-   outbound_link = false
-   debug = false  # debug mode
+   outbound_link = true
+   # Manage Adblockers
+   custom_js_domain = "stats.mydomain.org"   # Deprecated -> please use proxying
+   proxy_netlify = true
+   # Self hosting
+   selfhosted_domain = "myownplausible.mydomain.org"
+   # Write public dashboard url in source
+   public_dashboard = true
    # For embeded dashboard
    dash_disable = false
    dash_link = "https://plausible.io/share/yourdomain?auth=AZE1234RTYUOP67"
    dash_theme = ""
    dash_bgcolor = ""
+   # debug mode
+   debug = true
 [params.plausible_version]
-   id = "1.9.1"
+   id = "2.0.0"
