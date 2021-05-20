@@ -147,6 +147,12 @@ just add the parameter `outbound_link` to your `params.plausible` section.
   outbound_link = true
 ```
 
+## 4 - 404 custom goal
+
+We take care of the 404 pages for you.
+
+You only have to configure the goal in your Plausible settings for them to show up on your dashboard : *Select `Custom event` as the goal trigger and enter this exact name: `404`*.
+
 # Other options
 
 ## 1 - Do not track certain pages

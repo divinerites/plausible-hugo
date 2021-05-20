@@ -67,4 +67,8 @@
         {{- end }}
     </script>
 
+    <!-- For 404 page -->
+    {{- if eq .Page.Kind "404" }}
+    <script>plausible("404",{ props: { path: document.location.pathname } });</script>
+    {{- end }}
 {{- end }}

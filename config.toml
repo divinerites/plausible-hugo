@@ -17,4 +17,4 @@
    # debug mode
    debug = true
 [params.plausible_version]
-   id = "1.10.4"
+   id = "1.11.0"
