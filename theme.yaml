@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.org/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.11.0
+version: 1.12.0
 tags:
   - component
   - plausible.io
@@ -29,7 +29,8 @@ features:
   - Add embeded Plausible dashboard in your Hugo site (v1.9.0)
   - Add Plausible dashboard switch (v1.9.1)
   - Add Proxying Plausible through Netlify (1.10.0) + refactoring
-  - Add 404 custom event  (1.11.0)
+  - Add 404 custom event (1.11.0)
+  - Replace 200 with 202 for the event (1.12.0) to follow plausible change method.
 min_version: 0.50.0
 author:
   name: "Didier Divinerites"
