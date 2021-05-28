@@ -42,7 +42,7 @@ theme = ["plausible-hugo"]  # Add this theme to your already existing other them
 
 You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer *and know how to do it*.
 
-We strongly advise for this method, as it will be simple and transparent to keep up with our version updates.
+**We strongly advise for this method**, as it will be simple and transparent to keep up with our version updates.
 
 In this case, instead of declaring this as a theme, just add it as a hugo module.
 
