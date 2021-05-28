@@ -14,7 +14,7 @@ This Hugo theme component & module is a dead simple integration between [plausib
 
 > ### ***That's it ! It works***. Nothing more is needed
 
-### Hugo Module
+## Hugo Module
 
 You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer *and know how to do it*.
 
