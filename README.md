@@ -14,7 +14,19 @@ This Hugo theme component & module is a dead simple integration between [plausib
 
 > ### ***That's it ! It works***. Nothing more is needed
 
-*You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer and know how to do it*.
+### Hugo Module
+
+You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer *and know how to do it*.
+
+We strongly advise for this method, as it will be simple and transparent to keep up with our version updates.
+
+In this case, instead of declaring this as a theme, just add it as a hugo module.
+
+```toml
+[module]
+    [[module.imports]]
+        path = "github.com/divinerites/plausible-hugo"
+```
 
 ---
 Please, consider **leaving a star on Github if you like it**.
