@@ -1,20 +1,22 @@
 [params.plausible]
-   enable = true
-   domain = "my-plausible-domain-id-dashboard"
-   outbound_link = true
-   # Manage Adblockers
-   custom_js_domain = "stats.mydomain.org"   # Deprecated -> please use proxying
-   proxy_netlify = true
-   # Self hosting
-   selfhosted_domain = "myownplausible.mydomain.org"
-   # Write public dashboard url in source
-   public_dashboard = true
-   # For embeded dashboard
-   dash_disable = false
-   dash_link = "https://plausible.io/share/yourdomain?auth=AZE1234RTYUOP67"
-   dash_theme = ""
-   dash_bgcolor = ""
-   # debug mode
-   debug = true
+   enable = false
+   # --- MANDATORY Domain name
+   # domain = "my-plausible-domain-id-dashboard"
+   # --- Outboundlink goal
+   # outbound_link = false
+   # --- Manage Adblockers
+   # custom_js_domain = "stats.mydomain.org"   # Deprecated -> please use proxying
+   # proxy_netlify = false
+   # --- Self hosting
+   # selfhosted_domain = "myownplausible.mydomain.org"
+   # --- Write public dashboard url in source
+   # public_dashboard = true
+   # --- For embeded dashboard
+   # dash_disable = false
+   # dash_link = "https://plausible.io/share/yourdomain?auth=AZE1234RTYUOP67"
+   # dash_theme = ""
+   # dash_bgcolor = ""
+   # -- debug mode
+   # debug = false
 [params.plausible_version]
-   id = "1.13.0"
+   id = "1.14.0"

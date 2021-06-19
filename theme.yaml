@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.rg/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.13.0
+version: 1.14.0
 tags:
   - component
   - plausible.io
@@ -32,6 +32,7 @@ features:
   - Add 404 custom event (1.11.0)
   - Replace 200 with 202 for the event (1.12.0) to follow plausible change method.
   - Use only defer to follow plausible.io advice (1.13.0)
+  - Remove params example to manage new "Deep merge of theme Params" in hugo v0.84.0 (1.14.0)
 min_version: 0.50.0
 author:
   name: "Didier Divinerites"
