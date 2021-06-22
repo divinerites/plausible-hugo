@@ -1,0 +1,3 @@
+
+[plausible_gitstar]
+other = "*** Merci de liker (star) ce module sur Github si vous appréciez plausible-hugo.\n Supprimez ce warning en ajoutant 'gitstar = false' dans votre config plausible"

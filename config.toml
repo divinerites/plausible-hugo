@@ -18,5 +18,7 @@
    # dash_bgcolor = ""
    # -- debug mode
    # debug = false
+   # -- remove console tip for giving a star on github
+   # gitstar = false
 [params.plausible_version]
-   id = "1.14.0"
+   id = "1.15.0"

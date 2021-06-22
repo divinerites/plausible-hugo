@@ -17,3 +17,12 @@
 <!-- Write information about the plugin -->
 {{- $_text := "<!-- Thanks for using github/divinerites/plausible-hugo v%s. Please, consider leaving a star on Github if you like it. -->" }}
 {{- printf $_text site.Params.plausible_version.id | safeHTML }}
+
+<!-- Write console hint about leaving a star for this module on GitHub -->
+{{- if or ( .Site.Params.plausible.gitstar ) (not (isset .Site.Params.plausible "gitstar")) }}
+   {{- with (.Scratch.Get "infogit") }}
+      {{- $warn := i18n "plausible_gitstar" }}
+      {{- warnf $warn }}
+   {{- end }}
+   {{ .Scratch.Add "infogit" "hint hint hint :-)" }}
+{{- end }}

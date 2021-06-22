@@ -356,7 +356,20 @@ You will also receive warning message if you are using deprecated features.
 
 So it helps you updating your `config.toml` in case we introduced some breaking changes in variables names between versions. *It is rare, but it happened already*.
 
-## 2 - Credits
+## 2 - Giving a star on github.com
+
+By default we put a console fiendly reminder to consider giving a star on github if you like this module.
+
+Obviously you can disable this message, just by adding `gitstar = false` in your `params.plausible`.
+
+```toml
+[params.plausible]
+   gitstar = false
+```
+
+*Nota : For multilingual sites, this message is issued for every language you have.*
+
+## 3 - Credits
 
 - Hugo : [www.gohugo.io](https://www.gohugo.io)
 - Plausible : [www.plausible.io](https://www.plausible.io?ref=github-plausible-hugo)
