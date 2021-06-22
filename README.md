@@ -344,7 +344,7 @@ The call to plausible.io javascript will be enable, so you can have everything w
    debug = true  # debug mode
 ```
 
-# plausible-hugo versions
+# Various
 
 ## 1 - Check variables & module versions
 
