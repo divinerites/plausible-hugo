@@ -358,7 +358,7 @@ So it helps you updating your `config.toml` in case we introduced some breaking 
 
 ## 2 - Giving a star on github.com
 
-By default we put a console fiendly reminder to consider giving a star on github if you like this module.
+By default we put a console friendly reminder to consider giving a star on github if you like this module.
 
 Obviously you can disable this message, just by adding `gitstar = false` in your `params.plausible`.
 
