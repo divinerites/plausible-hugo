@@ -1,6 +1,6 @@
 <!-- MANDATORY : You need to generate a shared link in your dashboard -->
 <!-- Test if .plausible.dash_link exist.if not => Stop and Error -->
-{{- if not (isset .Site.Params.plausible "dash_link") }}
+{{- if not (isset site.Params.plausible "dash_link") }}
    {{- $_text := "Upgrade your config.toml; You need [params.plausible.dash_link] = %s" }}
    {{- errorf $_text "your-public-dashboard-link" }}
 {{- end }}
