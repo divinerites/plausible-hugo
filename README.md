@@ -367,8 +367,6 @@ Obviously you can disable this message, just by adding `gitstar = false` in your
    gitstar = false
 ```
 
-*Nota : For multilingual sites, this message is issued for every language you have.*
-
 ## 3 - Credits
 
 - Hugo : [www.gohugo.io](https://www.gohugo.io)
