@@ -210,7 +210,7 @@ If you are hosting on Netlify, we have done the [main setup](https://plausible.i
 
 ```txt
 /misc/js/script.js https://plausible.io/js/plausible.js 200
-/misc/api/event https://plausible.io/api/event 202
+/misc/api/event https://plausible.io/api/event 200
 ```
 
 If you want outbound-links, use this line instead:

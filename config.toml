@@ -21,4 +21,4 @@
    # -- remove console tip for giving a star on github
    # gitstar = false
 [params.plausible_version]
-   id = "1.15.4"
+   id = "1.16.0"
