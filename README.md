@@ -159,7 +159,7 @@ just add the parameter `outbound_link` to your `params.plausible` section.
   outbound_link = true
 ```
 
-## 4 - File downloads tracking custom goal
+## 5 - File downloads tracking custom goal
 
 If you want to use the [File downloads tracking](https://plausible.io/docs/file-downloads-tracking/) custom goal,
 just add the parameter `file_downloads` to your `params.plausible` section.
@@ -169,9 +169,9 @@ just add the parameter `file_downloads` to your `params.plausible` section.
   file_downloads = true
 ```
 
-### 4.1 - Track a different file type
+### 5.1 - Track a different file type
 
-If you want to track diffrent file types like `.sh` and `.run`, just add the parameter `file_downloads_types` to your `params.plausible` section.
+If you want to track different file types like `.sh` and `.run`, just add the parameter `file_downloads_types` to your `params.plausible` section.
 
 ```toml
 [params.plausible]
@@ -180,7 +180,7 @@ If you want to track diffrent file types like `.sh` and `.run`, just add the par
 
 **Using the `file_downloads_types` parameter will override the default list and only your custom file type downloads will be tracked.**
 
-## 4 - 404 custom goal
+## 6 - 404 custom goal
 
 We take care of the 404 pages for you.
 
