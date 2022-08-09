@@ -4,6 +4,9 @@
    # domain = "my-plausible-domain-id-dashboard"
    # --- Outboundlink goal
    # outbound_link = false
+   # --- Track donwloaded files
+   # file_downloads = true
+   # file_downloads_types = "sh,run"
    # --- Manage Adblockers
    # custom_js_domain = "stats.mydomain.org"   # Deprecated -> please use proxying
    # proxy_netlify = false
@@ -21,4 +24,4 @@
    # -- remove console tip for giving a star on github
    # gitstar = false
 [params.plausible_version]
-   id = "1.16.0"
+   id = "1.17.0"

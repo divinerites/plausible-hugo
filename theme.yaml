@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.rg/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.16.0
+version: 1.17.0
 tags:
   - component
   - plausible.io
@@ -34,7 +34,8 @@ features:
   - Use only defer to follow plausible.io advice (1.13.0)
   - Remove params example to manage new "Deep merge of theme Params" in hugo v0.84.0 (1.14.0)
   - Add console hint for giving a star on github (1.15.0)
-  - Replace 202 with 200 for the event (1.6.0) to follow new Netlify/plausible method.
+  - Replace 202 with 200 for the event (1.16.0) to follow new Netlify/plausible method.
+  - Add file download tracking (1.17.0). Thanks to marcbull.
 
 min_version: 0.50.0
 author:
