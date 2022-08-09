@@ -19,6 +19,11 @@
 {{- else if site.Params.plausible.custom_js_domain }}
     {{- $pio_script = "index"}}
 {{- end }}
+<!-- manage FILE DOWNLOADS if set -->
+{{- $downloads := "" }}
+{{- if site.Params.plausible.file_downloads }}
+    {{- $downloads = ".file-downloads" }}
+{{- end }}
 <!-- manage OUTBOUND LINKS if set -->
 {{- $outbound := "" }}
 {{- if site.Params.plausible.outbound_link }}
@@ -34,7 +39,7 @@
     {{- $pio_js = "/misc/js/"}}
     {{- $pio_data_api = "/misc/api/event"}}
 {{- end }}
-{{- $pio_script = printf "%s%s" $pio_script $outbound }}
+{{- $pio_script = printf "%s%s%s" $pio_script $downloads $outbound }}
 
 <!-- Active plausible : if option is "on" and for allowed pages -->
 {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
@@ -49,7 +54,7 @@
         {{- printf "<!-- Dev mode : We do not load plausible script to avoid bloating your stats -->" | safeHTML }}
     {{- else }}
         <!-- In production or in debug mode, we need plausible to fully operate -->
-        <script defer data-domain="{{ site.Params.plausible.domain }}" src="{{ $pio_http }}{{ $pio_domain }}{{ $pio_js }}{{ $pio_script }}.js" {{if site.Params.plausible.proxy_netlify }}data-api="{{ $pio_data_api }}"{{ end }}></script>
+        <script defer {{if site.Params.plausible.file_downloads_types }}file-types="{{ site.Params.plausible.file_downloads_types }}"{{ end }} data-domain="{{ site.Params.plausible.domain }}" src="{{ $pio_http }}{{ $pio_domain }}{{ $pio_js }}{{ $pio_script }}.js" {{if site.Params.plausible.proxy_netlify }}data-api="{{ $pio_data_api }}"{{ end }}></script>
     {{- end }}
 
     {{- partialCached "plausible_head_csp.html" (dict "context" . "domain" $pio_domain "script" $pio_script ) }}
