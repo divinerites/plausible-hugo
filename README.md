@@ -6,6 +6,11 @@ And Hugo is *The world’s fastest framework for building websites*.
 
 This Hugo theme component & module is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
 
+---
+
+![GitHub version](https://img.shields.io/badge/Version-1.17.2-informational)
+
+
 ## Usage is simple as 1-2-3
 
 1. Add this `plausible-hugo` component as a theme in your theme section in `config.toml`.
