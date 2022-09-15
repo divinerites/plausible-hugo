@@ -10,6 +10,9 @@ This Hugo theme component & module is a dead simple integration between [plausib
 
 ![GitHub version](https://img.shields.io/badge/Version-1.17.2-informational)
 
+Please, consider **leaving a star on Github if you like it**.
+
+---
 
 ## Usage is simple as 1-2-3
 
@@ -18,11 +21,6 @@ This Hugo theme component & module is a dead simple integration between [plausib
 1. Call the partial `plausible_head.html` in your own `<head>` section.
 
 > ### ***That's it ! It works***. Nothing more is needed
-
----
-Please, consider **leaving a star on Github if you like it**.
-
----
 
 ### Mininum `config.toml` file
 
