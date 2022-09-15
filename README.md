@@ -12,7 +12,7 @@ This Hugo theme component & module is a dead simple integration between [plausib
 ![License](https://img.shields.io/github/license/divinerites/plausible-hugo)
 ![Last commit](https://img.shields.io/github/last-commit/divinerites/plausible-hugo)
 
-Please, consider **leaving a star on Github if you like it**. ![Last commit](https://img.shields.io/github/stars/divinerites/plausible-hugo?style=social)
+Please, consider **leaving a star on Github if you like it**. ![Github Stars](https://img.shields.io/github/stars/divinerites/plausible-hugo?style=social)
 
 ---
 
