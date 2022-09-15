@@ -8,9 +8,11 @@ This Hugo theme component & module is a dead simple integration between [plausib
 
 ---
 
-![GitHub version](https://img.shields.io/badge/Version-1.17.2-informational)
+![GitHub version](https://img.shields.io/github/v/tag/divinerites/plausible-hugo?label=Version)
+![License](https://img.shields.io/github/license/divinerites/plausible-hugo)
+![Last commit](https://img.shields.io/github/last-commit/divinerites/plausible-hugo)
 
-Please, consider **leaving a star on Github if you like it**.
+Please, consider **leaving a star on Github if you like it**. ![Last commit](https://img.shields.io/github/stars/divinerites/plausible-hugo?style=social)
 
 ---
 
