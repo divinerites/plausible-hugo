@@ -21,7 +21,7 @@ Please, consider **leaving a star on Github if you like it**. ![Github Stars](ht
 1. Add this `plausible-hugo` component as a theme in your theme section in `config.toml`.
 1. Add a `[params.plausible]` section in your `config.toml` file.
 1. Call the partial `plausible_head.html` in your own `<head>` section.
-1. You can have a look at the end of this file for *a minimal working example*.
+
 > ### ***That's it ! It works***. Nothing more is needed
 
 ### Mininum `config.toml` file
@@ -42,6 +42,8 @@ theme = ["plausible-hugo"]  # Add this theme to your already existing other them
    ...
 </head>
 ```
+
+You can have a look at [the end of this file](#configuration-example-hugo-module-option) for a minimal working example as a hugo module.
 
 ## Hugo Module
 
@@ -401,14 +403,12 @@ Obviously you can disable this message, just by adding `gitstar = false` in your
 
 # Configuration example *(hugo module option)*
 
-`config.toml`
+## config.toml
 
 ```toml
-...
 [module]
    [[module.imports]]
    path = "github.com/divinerites/plausible-hugo"
-...
 
 [plausible]
 enable = true
@@ -419,7 +419,7 @@ debug = false
 gitstar = false
 ```
 
-`index.html`
+# index.html
 
 ```html
 <!DOCTYPE html>
