@@ -419,7 +419,7 @@ debug = false
 gitstar = false
 ```
 
-# index.html
+## index.html
 
 ```html
 <!DOCTYPE html>
