@@ -29,6 +29,11 @@
 {{- if site.Params.plausible.outbound_link }}
     {{- $outbound = ".outbound-links" }}
 {{- end }}
+<!-- manage hash-based routing if set -->
+{{- $hash := "" }}
+{{- if site.Params.plausible.hash_based_routing }}
+{{- $hash = ".hash" }}
+{{- end }}
 <!-- Manage proxing for Netlify -->
 {{- if site.Params.plausible.proxy_netlify }}
     {{- $pio_http = "" }}
@@ -39,7 +44,7 @@
     {{- $pio_js = "/misc/js/"}}
     {{- $pio_data_api = "/misc/api/event"}}
 {{- end }}
-{{- $pio_script = printf "%s%s%s" $pio_script $downloads $outbound }}
+{{- $pio_script = printf "%s%s%s%s" $pio_script $downloads $outbound $hash }}
 
 <!-- Active plausible : if option is "on" and for allowed pages -->
 {{- if and (site.Params.plausible.enable) (not .Params.plausible_do_not_track) }}
