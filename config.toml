@@ -2,6 +2,8 @@
    enable = false
    # --- MANDATORY Domain name
    # domain = "my-plausible-domain-id-dashboard"
+   # --- Hash-based routing
+   # hash_based_routing = true
    # --- Outboundlink goal
    # outbound_link = false
    # --- Track donwloaded files
