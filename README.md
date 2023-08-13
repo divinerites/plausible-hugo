@@ -187,7 +187,13 @@ If you want to track different file types like `.sh` and `.run`, just add the pa
 
 **Using the `file_downloads_types` parameter will override the default list and only your custom file type downloads will be tracked.**
 
-### 5.2 - Hash-based routing
+## 6 - 404 custom goal
+
+We take care of the 404 pages for you.
+
+You only have to [configure the goal in your Plausible settings](https://plausible.io/blog/track-404-errors) for them to show up on your dashboard : *Select `Custom event` as the goal trigger and enter this exact name: `404`*.
+
+## 7 - Hash-based routing
 
 If you want to use [Hash-based routing](https://plausible.io/docs/hash-based-routing), just add the parameter `outbound_link` to your `params.plausible` section.
 
@@ -195,12 +201,6 @@ If you want to use [Hash-based routing](https://plausible.io/docs/hash-based-rou
 [params.plausible]
   outbound_link = true
 ```
-
-## 6 - 404 custom goal
-
-We take care of the 404 pages for you.
-
-You only have to [configure the goal in your Plausible settings](https://plausible.io/blog/track-404-errors) for them to show up on your dashboard : *Select `Custom event` as the goal trigger and enter this exact name: `404`*.
 
 # Other options
 
