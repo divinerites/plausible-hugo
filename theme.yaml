@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.rg/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.18.0
+version: 1.19.0
 tags:
   - component
   - plausible.io
@@ -37,6 +37,7 @@ features:
   - Replace 202 with 200 for the event (1.16.0) to follow new Netlify/plausible method.
   - Add file download tracking (1.17.0). Thanks to marcbull.
   - Add Hash-based routing (1.18.0). Thanks to Mike perryao.
+  - Update script name to uptodate documentation = script.js
 
 min_version: 0.50.0
 author:

@@ -246,7 +246,7 @@ If you are hosting on Netlify, we have done the [main setup](https://plausible.i
 3 - If you do not already use the `index.redir` system, you just can create a `_redirects` file in your `/static` folder and add those 2 lines below in this file.
 
 ```txt
-/misc/js/script.js https://plausible.io/js/plausible.js 200
+/misc/js/script.js https://plausible.io/js/script.js 200
 /misc/api/event https://plausible.io/api/event 200
 ```
 
