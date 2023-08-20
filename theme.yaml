@@ -37,7 +37,7 @@ features:
   - Replace 202 with 200 for the event (1.16.0) to follow new Netlify/plausible method.
   - Add file download tracking (1.17.0). Thanks to marcbull.
   - Add Hash-based routing (1.18.0). Thanks to Mike perryao.
-  - Update script name to uptodate documentation = script.js
+  - Update script name to uptodate documentation = script.js (1.19.0)
 
 min_version: 0.50.0
 author:
