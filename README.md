@@ -199,7 +199,7 @@ If you want to use [Hash-based routing](https://plausible.io/docs/hash-based-rou
 
 ```toml
 [params.plausible]
-  outbound_link = true
+  hash_based_routing = true
 ```
 
 # Other options
