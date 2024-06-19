@@ -54,12 +54,24 @@
         <link rel="preconnect" href="https://{{ $pio_domain }}">
     {{- end }}
     <!-- Add SCRIPT DIRECTIVES -->
-    {{- if and (site.IsServer) (not site.Params.plausible.debug) -}}
-        <!-- To avoid stats bloat when in dev/server & not debug mode -->
-        {{- printf "<!-- Dev mode : We do not load plausible script to avoid bloating your stats -->" | safeHTML }}
+    {{- if lt hugo.Version "0.120.0" }}
+        <!-- Old Hugo versions -->
+        {{- if and (site.IsServer) (not site.Params.plausible.debug) -}}
+            <!-- To avoid stats bloat when in dev/server & not debug mode -->
+            {{- printf "<!-- Dev mode : We do not load plausible script to avoid bloating your stats -->" | safeHTML }}
+        {{- else }}
+            <!-- In production or in debug mode, we need plausible to fully operate -->
+            <script defer {{if site.Params.plausible.file_downloads_types }}file-types="{{ site.Params.plausible.file_downloads_types }}"{{ end }} data-domain="{{ site.Params.plausible.domain }}" src="{{ $pio_http }}{{ $pio_domain }}{{ $pio_js }}{{ $pio_script }}.js" {{if site.Params.plausible.proxy_netlify }}data-api="{{ $pio_data_api }}"{{ end }}></script>
+        {{- end }}
     {{- else }}
-        <!-- In production or in debug mode, we need plausible to fully operate -->
-        <script defer {{if site.Params.plausible.file_downloads_types }}file-types="{{ site.Params.plausible.file_downloads_types }}"{{ end }} data-domain="{{ site.Params.plausible.domain }}" src="{{ $pio_http }}{{ $pio_domain }}{{ $pio_js }}{{ $pio_script }}.js" {{if site.Params.plausible.proxy_netlify }}data-api="{{ $pio_data_api }}"{{ end }}></script>
+        <!-- Recent Hugo versions -->
+        {{- if and (hugo.IsServer) (not site.Params.plausible.debug) -}}
+            <!-- To avoid stats bloat when in dev/server & not debug mode -->
+            {{- printf "<!-- Dev mode : We do not load plausible script to avoid bloating your stats -->" | safeHTML }}
+        {{- else }}
+            <!-- In production or in debug mode, we need plausible to fully operate -->
+            <script defer {{if site.Params.plausible.file_downloads_types }}file-types="{{ site.Params.plausible.file_downloads_types }}"{{ end }} data-domain="{{ site.Params.plausible.domain }}" src="{{ $pio_http }}{{ $pio_domain }}{{ $pio_js }}{{ $pio_script }}.js" {{if site.Params.plausible.proxy_netlify }}data-api="{{ $pio_data_api }}"{{ end }}></script>
+        {{- end }}
     {{- end }}
 
     {{- partialCached "plausible_head_csp.html" (dict "context" . "domain" $pio_domain "script" $pio_script ) }}
