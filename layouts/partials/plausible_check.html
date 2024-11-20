@@ -16,7 +16,7 @@
 
 <!-- Write console hint about leaving a star for this module on GitHub -->
 {{- if or ( site.Params.plausible.gitstar ) (not (isset site.Params.plausible "gitstar")) }}
-{{- if eq site.Language site.Sites.First.Language }}
+{{- if eq site.Language site.Sites.Default.Language }}
    <!-- Write information IN CONSOLE about the plugin -->
    {{- $warn := i18n "plausible_gitstar" }}
    {{- warnf $warn }}
