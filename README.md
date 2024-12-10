@@ -14,6 +14,8 @@ This Hugo theme component & module is a dead simple integration between [plausib
 
 Please, consider **leaving a star on Github if you like it**. ![Github Stars](https://img.shields.io/github/stars/divinerites/plausible-hugo?style=social)
 
+[![Star History Chart](https://api.star-history.com/svg?repos=divinerites/plausible-hugo&type=Date)](https://star-history.com/#divinerites/plausible-hugo&Date)
+
 ---
 
 ## Usage is simple as 1-2-3
@@ -440,7 +442,3 @@ gitstar = false
 </head>
 </html>
 ```
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=divinerites/plausible-hugo&type=Date)](https://star-history.com/#divinerites/plausible-hugo&Date)
