@@ -440,3 +440,7 @@ gitstar = false
 </head>
 </html>
 ```
+
+## Star History
+
+<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwX0VSbUR1VVFNbEc2eGVzTTAzT0YzbjZzbGo5SHNDNTBNRlh4bg==#divinerites/plausible-hugo&Date" frameBorder="0"></iframe>
