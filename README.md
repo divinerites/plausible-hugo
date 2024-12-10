@@ -443,4 +443,4 @@ gitstar = false
 
 ## Star History
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwX0VSbUR1VVFNbEc2eGVzTTAzT0YzbjZzbGo5SHNDNTBNRlh4bg==#divinerites/plausible-hugo&Date" frameBorder="0"></iframe>
+[![Star History Chart](https://api.star-history.com/svg?repos=divinerites/plausible-hugo&type=Date)](https://star-history.com/#divinerites/plausible-hugo&Date)
