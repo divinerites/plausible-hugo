@@ -5,7 +5,7 @@ license: GPLv3
 licenselink: https://www.gnu.rg/licenses/gpl-3.0.html
 description: Integration between plausible.io and gohugo.io
 homepage: https://github.com/divinerites/plausible-hugo
-version: 1.21.0
+version: 1.22.0
 tags:
   - component
   - plausible.io
@@ -42,6 +42,7 @@ features:
   - Remove the stupid false logic for netlify/outbound-link bug (1.19.6)
   - Manage site.IsServer deprecation (1.20.0)
   - Manage .Sites.First deprecation. Thanks to @marcbull (1.21.0)
+  - Solve issue 23 - safeURL for port in URL (1.22.0)
 
 min_version: 0.50.0
 author:
