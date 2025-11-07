@@ -6,9 +6,9 @@ And Hugo is *The world’s fastest framework for building websites*.
 
 This Hugo theme component & module is a dead simple integration between [plausible.io](https://www.plausible.io?ref=github-plausible-hugo) and [gohugo.io](https://www.gohugo.io)
 
----
+Want deep knowledge about ˋplausible-hugoˋ ? : [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/divinerites/plausible-hugo)
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/divinerites/plausible-hugo)
+---
 
 ![GitHub version](https://img.shields.io/github/v/tag/divinerites/plausible-hugo?label=Version)
 ![License](https://img.shields.io/github/license/divinerites/plausible-hugo)
