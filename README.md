@@ -8,6 +8,8 @@ This Hugo theme component & module is a dead simple integration between [plausib
 
 ---
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/divinerites/plausible-hugo)
+
 ![GitHub version](https://img.shields.io/github/v/tag/divinerites/plausible-hugo?label=Version)
 ![License](https://img.shields.io/github/license/divinerites/plausible-hugo)
 ![Last commit](https://img.shields.io/github/last-commit/divinerites/plausible-hugo)
