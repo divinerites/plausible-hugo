@@ -1,7 +1,17 @@
 # Redirects for plausible.io & github.com/divinerites/plausible-hugo
-{{- if site.Params.plausible.outbound_link }}
-/misc/js/script.js https://plausible.io/js/script.outbound-links.js 200
-{{- else }}
-/misc/js/script.js https://plausible.io/js/script.js 200
-{{- end }}
+{{ $downloads := "" -}}
+{{ $outbound := "" -}}
+{{ $hash := "" -}}
+{{ if site.Params.plausible.file_downloads -}}
+{{ $downloads = ".file-downloads" -}}
+{{ end -}}
+{{ if site.Params.plausible.outbound_link -}}
+{{ $outbound = ".outbound-links" -}}
+{{ end -}}
+{{ if site.Params.plausible.hash_based_routing -}}
+{{ $hash = ".hash" -}}
+{{ end -}}
+{{ $local := printf "script%s%s" $downloads $hash -}}
+{{ $remote := printf "script%s%s%s" $downloads $outbound $hash -}}
+/misc/js/{{ $local }}.js https://plausible.io/js/{{ $remote }}.js 200
 /misc/api/event https://plausible.io/api/event 200
