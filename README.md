@@ -53,7 +53,7 @@ You can have a look at [the end of this file](#configuration-example-hugo-module
 
 ## Hugo Module
 
-You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer *and know how to do it*.
+You also can use it as a versioned [Hugo Module](https://gohugo.io/hugo-modules/) if you prefer *and know how to do it*. Requires Hugo **0.126.3** or newer.
 
 **We strongly advise for this method**, as it will be simple and transparent to keep up with our version updates.
 
@@ -201,7 +201,7 @@ You only have to [configure the goal in your Plausible settings](https://plausib
 
 ## 7 - Hash-based routing
 
-If you want to use [Hash-based routing](https://plausible.io/docs/hash-based-routing), just add the parameter `outbound_link` to your `params.plausible` section.
+If you want to use [Hash-based routing](https://plausible.io/docs/hash-based-routing), just add the parameter `hash_based_routing` to your `params.plausible` section.
 
 ```toml
 [params.plausible]
@@ -259,8 +259,17 @@ If you are hosting on Netlify, we have done the [main setup](https://plausible.i
 If you want outbound-links, use this line instead:
 
 ```txt
-/misc/js/script.js https://plausible.io/js/plausible.outbound-links.js 200
+/misc/js/script.js https://plausible.io/js/script.outbound-links.js 200
 ```
+
+`file_downloads` and `hash_based_routing` are part of the path the page requests (`/misc/js/script.file-downloads.hash.js`, for example). `outbound_link` is not: the page still requests the path without `.outbound-links`, and the redirect target adds it. With all three options on, the lines are:
+
+```txt
+/misc/js/script.file-downloads.hash.js https://plausible.io/js/script.file-downloads.outbound-links.hash.js 200
+/misc/api/event https://plausible.io/api/event 200
+```
+
+The `plausible_redirects_netlify.html` partial builds that script line for every combination. Prefer it to a hand-written `_redirects`.
 
 ## 2b - [DEPRECATED] Plausible custom subdomain
 
@@ -425,7 +434,7 @@ Obviously you can disable this message, just by adding `gitstar = false` in your
    [[module.imports]]
    path = "github.com/divinerites/plausible-hugo"
 
-[plausible]
+[params.plausible]
 enable = true
 domain = "my-domain-id"
 outbound_link = true

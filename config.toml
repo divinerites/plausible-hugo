@@ -26,4 +26,9 @@
    # -- remove console tip for giving a star on github
    # gitstar = false
 [params.plausible_version]
-   id = "1.22.2"
+   id = "1.22.3"
+
+# site.Sites.Default, used since v1.21.0, shipped in Hugo 0.126.3.
+[module]
+  [module.hugoVersion]
+    min = "0.126.3"
